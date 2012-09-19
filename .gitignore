@@ -1,6 +1,9 @@
 # project specific ignores
 solveet-simplicity-efficiency-problem-groovy/target/*
 
+solveet-kata-simple-list/target/*
+solveet-kata-simple-list/bin/*
+
 
 *.class
 
