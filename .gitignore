@@ -1,3 +1,7 @@
+# project specific ignores
+solveet-simplicity-efficiency-problem-groovy/target/*
+
+
 *.class
 
 # Package Files #
