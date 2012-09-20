@@ -18,6 +18,8 @@ solveet-add-positive-numbers/target/*
 
 solveet-twin-primes/bin/*
 
+solveet-pascal-triangle/bin/*
+
 *.class
 
 # Package Files #
