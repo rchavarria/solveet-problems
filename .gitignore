@@ -22,6 +22,8 @@ solveet-pascal-triangle/bin/*
 
 rle-compression/target/*
 
+rle-compression-javascript/target/*
+
 *.class
 
 # Package Files #
