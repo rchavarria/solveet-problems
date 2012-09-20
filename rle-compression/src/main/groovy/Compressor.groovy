@@ -1,4 +1,6 @@
-
+/**
+ * Solucion completa y test en: https://github.com/rchavarria/solveet-problems/tree/master/rle-compression
+ */
 class Compressor {
     private static final int MAX_OCCURRENCES = 5
 
