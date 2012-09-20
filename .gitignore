@@ -16,6 +16,8 @@ solveet-christmas-tree/target/*
 
 solveet-add-positive-numbers/target/*
 
+solveet-twin-primes/bin/*
+
 *.class
 
 # Package Files #
