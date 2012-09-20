@@ -31,6 +31,13 @@ class Compressor {
     }
 
     private buildPartialOutput(nCharacters, character) {
-        "" + nCharacters + character
+        def partialOutput = ""
+        while(nCharacters > 5) {
+            partialOutput += 5.toString() + character
+            nCharacters -= 5
+        }
+        partialOutput += nCharacters.toString() + character
+
+        partialOutput
     }
 }
