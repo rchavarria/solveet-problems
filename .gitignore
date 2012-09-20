@@ -20,6 +20,8 @@ solveet-twin-primes/bin/*
 
 solveet-pascal-triangle/bin/*
 
+rle-compression/target/*
+
 *.class
 
 # Package Files #
