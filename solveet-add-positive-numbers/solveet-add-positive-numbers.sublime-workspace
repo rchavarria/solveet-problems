@@ -1,0 +1,325 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"inject"
+			],
+			[
+				"num",
+				"numberOfSpaces"
+			],
+			[
+				"g",
+				"generateLevel"
+			],
+			[
+				"ass",
+				"assertEquals"
+			],
+			[
+				"rep",
+				"replace	replaceAll(regex) { … }"
+			],
+			[
+				"player",
+				"playerAScore"
+			],
+			[
+				"expe",
+				"expectedPlayerAScore"
+			],
+			[
+				"pl",
+				"playerBScore"
+			],
+			[
+				"play",
+				"playerBScore"
+			],
+			[
+				"plae",
+				"playerAScore"
+			],
+			[
+				"pla",
+				"playerBScore"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/test/groovy/AdderTest.groovy",
+			"settings":
+			{
+				"buffer_size": 318,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/groovy/Adder.groovy",
+			"settings":
+			{
+				"buffer_size": 541,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/test/resources/PositiveNumbers.txt",
+			"settings":
+			{
+				"buffer_size": 13,
+				"line_ending": "Windows",
+				"name": "4"
+			}
+		}
+	],
+	"build_system": "Packages/User/cmd-dir.sublime-build",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 560.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/rchavarria/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/rchavarria/AppData/Roaming/Sublime Text 2/Packages/User/mvn_test.sublime-build",
+		"/C/Users/rchavarria/AppData/Roaming/Sublime Text 2/Packages/User/cmd-dir.sublime-build",
+		"/D/WorkSpaces/rchavarria/solveet-diamond-mine/README.md",
+		"/D/PREVERSION/client/bin/startModules.bat",
+		"/D/WorkSpaces/kata-tenis/kata-tennis/src/main/groovy/Player.groovy",
+		"/D/WorkSpaces/kata-tenis/kata-tennis/pom.xml",
+		"/D/WorkSpaces/kata-tenis/kata-tennis/src/test/groovy/GameTest.groovy",
+		"/D/WorkSpaces/kata-tenis/kata-tennis/src/main/groovy/Game.groovy",
+		"/D/WorkSpaces/kata-tenis/kata-tennis/target/surefire-reports/GameTest.txt"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"test",
+			"replace",
+			"(\"<>\",",
+			"replace",
+			"source",
+			"            \n",
+			"\n    "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"(\">\"))\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/test/groovy/AdderTest.groovy",
+					"settings":
+					{
+						"buffer_size": 318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Groovy/Groovy.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/main/groovy/Adder.groovy",
+					"settings":
+					{
+						"buffer_size": 541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								541,
+								541
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Groovy/Groovy.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/test/resources/PositiveNumbers.txt",
+					"settings":
+					{
+						"buffer_size": 13,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"auto_name": "4",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 93.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ga",
+				"/D/WorkSpaces/kata-tenis/kata-tennis/target/surefire-reports/GameTest.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"host",
+				"/D/rchavarria/Mis documentos/sublime-workspaces/hosts file.sublime-project"
+			],
+			[
+				"hos",
+				"/D/rchavarria/Mis documentos/sublime-workspaces/hosts file.sublime-project"
+			],
+			[
+				"ho",
+				"/D/rchavarria/Mis documentos/hosts file.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 161.0,
+	"status_bar_visible": true
+}
