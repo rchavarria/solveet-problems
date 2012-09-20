@@ -5,7 +5,8 @@ class Compressor {
         if("".equals(input)) return ""
 
         def output = ""
-        for(int i = 0; i < input.length(); ){
+        def i = 0
+        while (i < input.length()) {
             def character = input.charAt(i)
             def nCharacters = countCharacters(input, i, character)
             i += nCharacters
@@ -18,7 +19,7 @@ class Compressor {
 
     private countCharacters(input, i, character) {
         def count = 0
-        for( ; isCountableCharacter(input, i, character); i++){
+        for( ; isCountableCharacter(input, i, character); i++) {
             count ++
         }
         count
