@@ -7,6 +7,9 @@ solveet-kata-simple-list/bin/*
 solveet-kata-prime-factors/target/*
 solveet-kata-prime-factors/bin/*
 
+solveet-kata-tennis/target/*
+solveet-kata-tennis/bin/*
+
 *.class
 
 # Package Files #
