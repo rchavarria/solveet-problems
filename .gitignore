@@ -10,6 +10,8 @@ solveet-kata-prime-factors/bin/*
 solveet-kata-tennis/target/*
 solveet-kata-tennis/bin/*
 
+solveet-diamond-mine/target/*
+
 *.class
 
 # Package Files #
