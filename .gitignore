@@ -12,6 +12,8 @@ solveet-kata-tennis/bin/*
 
 solveet-diamond-mine/target/*
 
+solveet-christmas-tree/target/*
+
 *.class
 
 # Package Files #
