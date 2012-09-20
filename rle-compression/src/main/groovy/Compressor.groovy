@@ -1,6 +1,4 @@
-/**
- *  Codigo completo y tests en: https://github.com/rchavarria/solveet-pascal-triangle
- */
+
 class Compressor {
 
     def rle(input){
@@ -9,10 +7,10 @@ class Compressor {
         def output = ""
         for(int i = 0; i < input.length(); ){
             def character = input.charAt(i)
-            def characterOccurrences = countCharacters(input, i, character)
-            i += characterOccurrences
+            def nCharacters = countCharacters(input, i, character)
+            i += nCharacters
 
-            output += buildPartialOutput(characterOccurrences, character)
+            output += buildPartialOutput(nCharacters, character)
         }
 
         output
@@ -20,14 +18,18 @@ class Compressor {
 
     private countCharacters(input, i, character) {
         def count = 0
-        while(i < input.length() && input.charAt(i) == character) {
-            i++
-            count++
+        for( ; isCountableCharacter(input, i, character); i++){
+            count ++
         }
         count
     }
 
-    private buildPartialOutput(characterOccurrences, character) {
-        "" + characterOccurrences + character
+    private isCountableCharacter(input, i, character) {
+        return (i < input.length()) &&          // index not out of bounds
+               (input.charAt(i) == character)   // same character
+    }
+
+    private buildPartialOutput(nCharacters, character) {
+        "" + nCharacters + character
     }
 }
