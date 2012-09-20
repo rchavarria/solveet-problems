@@ -33,11 +33,11 @@ class Compressor {
 
     private buildPartialOutput(nCharacters, character) {
         def partialOutput = ""
-        while(nCharacters > MAX_OCCURRENCES) {
-            partialOutput += MAX_OCCURRENCES.toString() + character
-            nCharacters -= MAX_OCCURRENCES
+
+        for ( ; nCharacters > 0; nCharacters -= MAX_OCCURRENCES) {
+            def number = (nCharacters > MAX_OCCURRENCES) ? MAX_OCCURRENCES : nCharacters
+            partialOutput += "" + number + character
         }
-        partialOutput += nCharacters.toString() + character
 
         partialOutput
     }
