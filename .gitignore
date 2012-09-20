@@ -4,6 +4,8 @@ solveet-simplicity-efficiency-problem-groovy/target/*
 solveet-kata-simple-list/target/*
 solveet-kata-simple-list/bin/*
 
+solveet-kata-prime-factors/target/*
+solveet-kata-prime-factors/bin/*
 
 *.class
 
