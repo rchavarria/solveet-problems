@@ -33,6 +33,15 @@ class CompressorTest extends GroovyTestCase {
         check("ab", "1a1b")        
     }
 
+    @Test
+    public void testSeveralInputs() {
+        check("aabb", "2a2b")
+        check("aaaaa", "5a")
+        check("aaaaabbbbbcccccdddddeeeee", "5a5b5c5d5e")
+        check("AAaaAAaaAA", "2A2a2A2a2A")
+        check("abcdefghijklmnopqrstuvwxyz", "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z")
+    }
+
     private void check(input, expected) {
         def actual = compressor.rle(input)
         assertEquals(expected, actual)
