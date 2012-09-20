@@ -1,5 +1,6 @@
 
 class Compressor {
+    private static final int MAX_OCCURRENCES = 5
 
     def rle(input){
         if("".equals(input)) return ""
@@ -32,9 +33,9 @@ class Compressor {
 
     private buildPartialOutput(nCharacters, character) {
         def partialOutput = ""
-        while(nCharacters > 5) {
-            partialOutput += 5.toString() + character
-            nCharacters -= 5
+        while(nCharacters > MAX_OCCURRENCES) {
+            partialOutput += MAX_OCCURRENCES.toString() + character
+            nCharacters -= MAX_OCCURRENCES
         }
         partialOutput += nCharacters.toString() + character
 
