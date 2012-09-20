@@ -36,6 +36,7 @@ class CompressorTest extends GroovyTestCase {
     @Test
     public void testSeveralInputs() {
         check("aabb", "2a2b")
+
         check("aaaaa", "5a")
         check("aaaaabbbbbcccccdddddeeeee", "5a5b5c5d5e")
         check("AAaaAAaaAA", "2A2a2A2a2A")
@@ -45,6 +46,9 @@ class CompressorTest extends GroovyTestCase {
     @Test
     public void testInputMoreThanFiveOccurrences() {
         check("aaaaaa", "5a1a")
+
+        check("aaaaaaaaaaa", "5a5a1a")
+        check("aaaaaabbbbbbaaaaabbbbbbbbbb", "5a1a5b1b5a5b5b")
     }
 
     private void check(input, expected) {
