@@ -14,22 +14,21 @@ class CompressorTest extends GroovyTestCase {
     
     @Test
     public void testEmptyInput() {
-        def actual = compressor.rle("")
-        def expected = ""
-        assertEquals(expected, actual)
+        check("", "")
     }
 
     @Test
     public void testInput_a() {
-        def actual = compressor.rle("a")
-        def expected = "1a"
-        assertEquals(expected, actual)
+        check("a", "1a")
     }
 
     @Test
     public void testInput_aa() {
-        def actual = compressor.rle("aa")
-        def expected = "2a"
+        check("aa", "2a")
+    }
+
+    private void check(input, expected) {
+        def actual = compressor.rle(input)
         assertEquals(expected, actual)
     }
 }
