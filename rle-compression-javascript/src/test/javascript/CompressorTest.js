@@ -23,5 +23,8 @@ describe('Given input with same characters', function(){
 
         result = Compressor.rle("cccc");
         expect(result).toBe("4c");
+
+        result = Compressor.rle("ddddd");
+        expect(result).toBe("5d");
     });
 });

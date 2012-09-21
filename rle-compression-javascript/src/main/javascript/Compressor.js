@@ -7,7 +7,7 @@ var Compressor = function () {
         rle : function(input) {
             if ("" == input) return "";
 
-            return input.length + input;
+            return input.length + input[0];
         }
     };
 } ();
