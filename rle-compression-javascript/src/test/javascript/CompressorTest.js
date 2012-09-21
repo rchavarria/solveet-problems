@@ -12,3 +12,16 @@ describe('Given input: a', function(){
         expect(result).toBe("1a");
     });
 });
+
+describe('Given input with same characters', function(){
+    it('returns 1a, 2a, 3a, ...', function(){
+        var result = Compressor.rle("aa");
+        expect(result).toBe("2a");
+
+        result = Compressor.rle("bbb");
+        expect(result).toBe("3b");
+
+        result = Compressor.rle("cccc");
+        expect(result).toBe("4c");
+    });
+});

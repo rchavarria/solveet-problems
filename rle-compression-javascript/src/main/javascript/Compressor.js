@@ -5,7 +5,9 @@ var Compressor = function () {
     // class implementation
     return {
         rle : function(input) {
-            return "";
+            if ("" == input) return "";
+
+            return input.length + input;
         }
     };
 } ();
