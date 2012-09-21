@@ -28,3 +28,10 @@ describe('Given input with same characters', function(){
         expect(result).toBe("5d");
     });
 });
+
+describe('Given input: six a(s)', function(){
+    it('splits the output in 5a and 1a', function(){
+        var result = Compressor.rle("aaaaaa");
+        expect(result).toBe("5a1a");
+    });
+});
