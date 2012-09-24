@@ -10,12 +10,13 @@ class Maze {
 		def index = 0
 		def output = "" 
 		while(index < input.length()) {
-			def numberOfDigits = computeNumberOfDigits(input, index)
-			if(numberOfDigits == 0) {
+			if(isNewLine(input, index)) {
 				output += "\n"
 				index++
 				continue
 			}
+
+			def numberOfDigits = computeNumberOfDigits(input, index)
 			def nCharacters = extractNCharacters(input, index, index + numberOfDigits)
 			def character = extractCharacter(input, index + numberOfDigits)
 			
@@ -28,6 +29,10 @@ class Maze {
 		}
 
 		output
+	}
+
+	private isNewLine(input, index) {
+		input[index] == "!"
 	}
 
 	private computeNumberOfDigits(input, offset) {
