@@ -5,12 +5,13 @@ class Maze {
 	
 	def create(filePath) {
 		def lines = new File(filePath).readLines()
-		def input = lines.join("!")
+		def input = lines.join("!") // join lines, ! means a new line in the output
 		println "input ${input}"
 
 		def index = 0
 		def output = "" 
 		while(index < input.length()) {
+			// new line?
 			if(isNewLine(input, index)) {
 				output += "\n"
 				index++
@@ -23,7 +24,6 @@ class Maze {
 			
 			// update loop counter (digits + 1 character)
 			index += numberOfDigits + 1;
-			// println ("Input: '${input}', Number of digits: ${numberOfDigits}, nCharacters: ${nCharacters}, char: ${character}, index: ${index}")
 
 			// create output
 			nCharacters.times { output += character }
@@ -38,14 +38,8 @@ class Maze {
 	}
 
 	private computeNumberOfDigits(input, offset) {
-		for(def i = offset; i < input.length(); i++) {
-			def character = input[i]
-			if(! character.isNumber()) {
-				return i - offset;
-			}
-		}
-
-		throw RuntimeException("the input can not end with a number")
+		def lastIndex = input.length() - 1
+		(input[offset..lastIndex] as List).findIndexOf { !it.isNumber() }
 	}
 
 	private extractNCharacters(input, initialIndex, finalIndex) {
