@@ -40,6 +40,17 @@ describe('Given input with different characters', function(){
     it('returns the corresponding output, e.g.: 1a1b', function(){
        var result = Compressor.rle('ab');
         expect(result).toBe('1a1b');
+
+        result = Compressor.rle('aabb');
+        expect(result).toBe('2a2b');
+
+        result = Compressor.rle('aaabbbccc');
+        expect(result).toBe('3a3b3c');
+
+        result = Compressor.rle('aaaabbbbccccdddd');
+        expect(result).toBe('4a4b4c4d');
+
+        // result = Compressor.rle('abbcccddddeeeeeffffff');
+        // expect(result).toBe('1a2b3c4d5e5f1f');
     });
 });
-

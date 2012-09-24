@@ -13,14 +13,33 @@ var Compressor = function () {
         }
 
         return partialOutput;
-    }
+    };
+
+    var countSameCharacters = function(input, i, character) {
+        for(var j = i; j < input.length; j++) {
+            if(input[j] != character) {
+                return j - i;
+            }
+        }
+
+        return input.length - i;
+    };
 
     // class implementation
     return {
         rle : function(input) {
             if ("" == input) return "";
 
-            return buildPartialOutput(input.length, input[0]);
+            var output = "";
+            for(var i = 0; i < input.length; ) {
+                var character = input[i];
+                var nCharacters = countSameCharacters(input, i, character);
+                output += buildPartialOutput(nCharacters, character);
+
+                i += nCharacters;
+            }
+
+            return output;
         }
     };
 } ();
