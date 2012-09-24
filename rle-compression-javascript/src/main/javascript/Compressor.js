@@ -15,7 +15,8 @@ var Compressor = function () {
         return partialOutput;
     };
 
-    var countSameCharacters = function(input, i, character) {
+    var countSameCharacters = function(input, i) {
+        var character = input[i];
         for(var j = i; j < input.length; j++) {
             if(input[j] != character) {
                 return j - i;
@@ -33,7 +34,7 @@ var Compressor = function () {
             var output = "";
             for(var i = 0; i < input.length; ) {
                 var character = input[i];
-                var nCharacters = countSameCharacters(input, i, character);
+                var nCharacters = countSameCharacters(input, i);
                 output += buildPartialOutput(nCharacters, character);
 
                 i += nCharacters;
