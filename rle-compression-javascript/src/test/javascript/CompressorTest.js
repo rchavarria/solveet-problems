@@ -49,9 +49,6 @@ describe('Given input with different characters', function(){
 
         result = Compressor.rle('aaaabbbbccccdddd');
         expect(result).toBe('4a4b4c4d');
-
-        // result = Compressor.rle('abbcccddddeeeeeffffff');
-        // expect(result).toBe('1a2b3c4d5e5f1f');
     });
 });
 

@@ -1,3 +1,7 @@
+//
+// Codigo completo (proyecto maven, tests, ...) se puede encontrar en:
+//     https://github.com/rchavarria/solveet-problems/tree/master/rle-compression-javascript
+//
 var Compressor = function () {
 
     // constants
