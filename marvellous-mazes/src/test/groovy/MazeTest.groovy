@@ -42,6 +42,11 @@ class MazeTest extends GroovyTestCase {
 		check("src/test/resources/several_lines.txt", "T\nT")
 	}
 
+	@Test
+	public void testInputContainsAnExclamationCharacter() {
+		check("src/test/resources/exclamation.txt", "T\nT")
+	}
+
 	private check(inputFilePath, expectedOutput) {
 		def actualOutput = maze.create(inputFilePath)
 		assertEquals(expectedOutput, actualOutput)
