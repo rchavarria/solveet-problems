@@ -45,7 +45,7 @@ class Maze {
 			}
 		}
 
-		return input.length() - offset - 1;
+		throw RuntimeException("the input can not end with a number")
 	}
 
 	private extractNCharacters(input, initialIndex, finalIndex) {
