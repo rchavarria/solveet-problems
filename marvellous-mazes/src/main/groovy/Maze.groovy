@@ -5,14 +5,23 @@ class Maze {
 	
 	def create(filePath) {
 		def lines = new File(filePath).readLines()
-		def oneLine = lines.join("!")
+		def input = lines.join("!")
 
-		def numberOfDigits = computeNumberOfDigits(oneLine, 0)
-		def nCharacters = extractNCharacters(oneLine, 0 , numberOfDigits)
-		def character = extractCharacter(oneLine, numberOfDigits + 1)
-
+		def index = 0
 		def output = "" 
-		nCharacters.times { output += character }
+		while(index < input.length()) {
+			def numberOfDigits = computeNumberOfDigits(input, index)
+			def nCharacters = extractNCharacters(input, index, index + numberOfDigits)
+			def character = extractCharacter(input, index + numberOfDigits)
+			
+			// update loop counter (digits + 1 character)
+			index += numberOfDigits + 1;
+			println ("Input: '${input}', Number of digits: ${numberOfDigits}, nCharacters: ${nCharacters}, char: ${character}, index: ${index}")
+
+			// create output
+			nCharacters.times { output += character }
+		}
+
 		output
 	}
 
@@ -20,7 +29,7 @@ class Maze {
 		for(def i = offset; i < input.length(); i++) {
 			def character = input[i]
 			if(! character.isNumber()) {
-				return i - offset - 1;
+				return i - offset;
 			}
 		}
 
@@ -29,7 +38,7 @@ class Maze {
 
 	private extractNCharacters(input, initialIndex, finalIndex) {
 		def sum = 0
-		input[initialIndex..finalIndex].each { 
+		input[initialIndex..finalIndex - 1].each { 
 			sum += (it as Integer) 
 		}
 		sum
