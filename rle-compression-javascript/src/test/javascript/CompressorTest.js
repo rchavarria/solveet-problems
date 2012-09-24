@@ -54,3 +54,10 @@ describe('Given input with different characters', function(){
         // expect(result).toBe('1a2b3c4d5e5f1f');
     });
 });
+
+describe('Given input with different characters and more than 5 equal characters', function(){
+    it('returns the corresponding output, e.g.: 1a2b3c4d5e5f1f', function(){
+        var result = Compressor.rle('abbcccddddeeeeeffffff');
+        expect(result).toBe('1a2b3c4d5e5f1f');
+    });
+});
