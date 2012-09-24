@@ -24,6 +24,8 @@ rle-compression/target/*
 
 rle-compression-javascript/target/*
 
+marvellous-mazes/target/*
+
 *.class
 
 # Package Files #

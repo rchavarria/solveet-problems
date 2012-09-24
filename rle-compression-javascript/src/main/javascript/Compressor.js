@@ -21,12 +21,13 @@ var Compressor = function () {
 
     var countSameCharacters = function(input, i) {
         var character = input[i];
+
         for(var j = i; j < input.length; j++) {
             if(input[j] != character) {
                 return j - i;
             }
         }
-
+        
         return input.length - i;
     };
 
