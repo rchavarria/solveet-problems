@@ -18,7 +18,7 @@ class Maze {
 			}
 
 			def numberOfDigits = computeNumberOfDigits(input, index)
-			def nCharacters = extractNCharacters(input, index, index + numberOfDigits)
+			def nCharacters = extractNCharacters(input, index, index + numberOfDigits - 1)
 			def character = extractCharacter(input, index + numberOfDigits)
 			
 			// update loop counter (digits + 1 character)
@@ -50,7 +50,7 @@ class Maze {
 
 	private extractNCharacters(input, initialIndex, finalIndex) {
 		def sum = 0
-		input[initialIndex..finalIndex - 1].each { 
+		input[initialIndex..finalIndex].each { 
 			sum += (it as Integer) 
 		}
 		sum
