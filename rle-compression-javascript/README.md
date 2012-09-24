@@ -9,5 +9,10 @@ and his wonderful maven archetype ([source on github](https://github.com/akquine
 
 The command to create the javascript project with the archetype is:
 
-`mvn archetype:generate -DarchetypeArtifactId=javascript-quickstart -DarchetypeGroupId=de.akquinet.javascript.archetypes -DarchetypeVersion=1.0.0 -DgroupId=com.rchavarria.javascript -DartifactId=rle-compression-javascript`
+    mvn archetype:generate \ 
+        -DarchetypeArtifactId=javascript-quickstart \ 
+        -DarchetypeGroupId=de.akquinet.javascript.archetypes \ 
+        -DarchetypeVersion=1.0.0 \ 
+        -DgroupId=com.rchavarria.javascript \ 
+        -DartifactId=rle-compression-javascript
 
