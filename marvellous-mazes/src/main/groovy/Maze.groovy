@@ -7,19 +7,33 @@ class Maze {
 		def lines = new File(filePath).readLines()
 		def oneLine = lines.join("!")
 
-		def nCharacters = extractNCharacters(oneLine)
-		def character = extractCharacter(oneLine)
+		def numberOfDigits = computeNumberOfDigits(oneLine, 0)
+		def nCharacters = extractNCharacters(oneLine, 0 , numberOfDigits)
+		def character = extractCharacter(oneLine, numberOfDigits + 1)
 
 		def output = "" 
 		nCharacters.times { output += character }
 		output
 	}
 
-	private extractNCharacters(input) {
-		input[0] as Integer
+	private computeNumberOfDigits(input, offset) {
+		for(def i = offset; i < input.length(); i++) {
+			def character = input[i]
+			if(! character.isNumber()) {
+				return i - offset - 1;
+			}
+		}
+
+		return input.length() - offset;
 	}
 
-	private extractCharacter(input) {
-		input[1] as String
+	private extractNCharacters(input, initialIndex, finalIndex) {
+		def sum = 0
+		input[initialIndex..finalIndex].each { sum += it as Integer }
+		sum
+	}
+
+	private extractCharacter(input, index) {
+		input[index] as String
 	}
 }
