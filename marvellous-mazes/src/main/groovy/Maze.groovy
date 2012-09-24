@@ -3,7 +3,8 @@
  */
 class Maze {
 	
-	def create() {
-
+	def create(filePath) {
+		def lines = new File(filePath).readLines()
+		"T"
 	}
 }
