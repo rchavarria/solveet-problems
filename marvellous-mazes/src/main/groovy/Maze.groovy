@@ -6,6 +6,7 @@ class Maze {
 	def create(filePath) {
 		def lines = new File(filePath).readLines()
 		def input = lines.join("!")
+		println "input ${input}"
 
 		def index = 0
 		def output = "" 
@@ -22,12 +23,13 @@ class Maze {
 			
 			// update loop counter (digits + 1 character)
 			index += numberOfDigits + 1;
-			println ("Input: '${input}', Number of digits: ${numberOfDigits}, nCharacters: ${nCharacters}, char: ${character}, index: ${index}")
+			// println ("Input: '${input}', Number of digits: ${numberOfDigits}, nCharacters: ${nCharacters}, char: ${character}, index: ${index}")
 
 			// create output
 			nCharacters.times { output += character }
 		}
 
+		println "output\n${output}"
 		output
 	}
 
