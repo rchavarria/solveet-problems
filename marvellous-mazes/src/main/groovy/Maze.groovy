@@ -49,11 +49,9 @@ class Maze {
 	}
 
 	private extractNCharacters(input, initialIndex, finalIndex) {
-		def sum = 0
-		input[initialIndex..finalIndex].each { 
-			sum += (it as Integer) 
+		(input[initialIndex..finalIndex] as List).inject(0) { count, item -> 
+			count + (item as Integer)
 		}
-		sum
 	}
 
 	private extractCharacter(input, index) {
