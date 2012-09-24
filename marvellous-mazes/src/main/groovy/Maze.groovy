@@ -45,6 +45,7 @@ class Maze {
 	}
 
 	private extractCharacter(input, index) {
-		input[index] as String
+		def character = input[index] as String
+		return (character == "b") ? " " : character
 	}
 }

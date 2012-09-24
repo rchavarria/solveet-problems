@@ -37,6 +37,11 @@ class MazeTest extends GroovyTestCase {
 		check("src/test/resources/1T1b.txt", "T ")
 	}
 
+	@Test
+	public void testInputContainsSeveralLines() {
+		check("src/test/resources/several_lines.txt", "T\nT")
+	}
+
 	private check(inputFilePath, expectedOutput) {
 		def actualOutput = maze.create(inputFilePath)
 		assertEquals(expectedOutput, actualOutput)
