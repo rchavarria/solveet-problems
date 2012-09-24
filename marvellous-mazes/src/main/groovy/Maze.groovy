@@ -24,12 +24,14 @@ class Maze {
 			}
 		}
 
-		return input.length() - offset;
+		return input.length() - offset - 1;
 	}
 
 	private extractNCharacters(input, initialIndex, finalIndex) {
 		def sum = 0
-		input[initialIndex..finalIndex].each { sum += it as Integer }
+		input[initialIndex..finalIndex].each { 
+			sum += (it as Integer) 
+		}
 		sum
 	}
 
