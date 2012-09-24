@@ -18,4 +18,11 @@ class MazeTest extends GroovyTestCase {
 		def expected = "T"
 		assertEquals(expected, output)
 	}
+
+	@Test
+	public void testInput_5T_Outputs_TTTTT() {
+		def output = maze.create("src/test/resources/5T.txt")
+		def expected = "TTTTT"
+		assertEquals(expected, output)
+	}
 }
