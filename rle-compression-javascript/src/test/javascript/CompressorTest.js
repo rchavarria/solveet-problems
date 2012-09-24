@@ -35,3 +35,11 @@ describe('Given input: six a(s)', function(){
         expect(result).toBe("5a1a");
     });
 });
+
+describe('Given input with different characters', function(){
+    it('returns the corresponding output, e.g.: 1a1b', function(){
+       var result = Compressor.rle('ab');
+        expect(result).toBe('1a1b');
+    });
+});
+
