@@ -26,6 +26,8 @@ rle-compression-javascript/target/*
 
 marvellous-mazes/target/*
 
+fast-fibonacci/target/*
+
 *.class
 
 # Package Files #
