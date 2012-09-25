@@ -45,4 +45,13 @@ class Fibonacci {
     	else if(n == 1) 1
     	else privateMemoized.call(n - 1) + privateMemoized.call(n - 2) as BigInteger
 	}.memoize()
+
+	def trampolined(n) {
+		privateTrampolined.trampoline(n, 0, 1)
+	}
+
+	def privateTrampolined = { n, a, b -> 
+		if(n == 0) a
+		else privateTrampolined.trampoline( n - 1, b, (a + b as BigInteger))
+	}.trampoline()
 }

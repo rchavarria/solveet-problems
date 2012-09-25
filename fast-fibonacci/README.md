@@ -3,7 +3,7 @@ RLE compression
 
 Solution to the solveet.com problem: [Fast fibonacci](http://www.solveet.com/exercises/Fibonacci-rapido/37)
 
-I will explore 4 methods to calculate the n'th fibonacci number:
+I will explore these methods to calculate the n'th fibonacci number:
 
 1 Recursive
 2 Iterative

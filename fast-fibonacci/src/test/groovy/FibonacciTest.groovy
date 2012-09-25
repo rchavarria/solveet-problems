@@ -6,7 +6,7 @@ import org.junit.Before
 class FibonacciTest extends GroovyTestCase {
 
 	def fibonacci
-	def n = 100 
+	def n = 1000000
 
 	@Before
 	public void setUp() {
@@ -16,6 +16,7 @@ class FibonacciTest extends GroovyTestCase {
 		fibonacci.limitedIterative(0)
 		fibonacci.recursive(0)
 		fibonacci.memoized(0)
+		fibonacci.trampolined(0)
 	}
 
 	@Test
@@ -34,6 +35,11 @@ class FibonacciTest extends GroovyTestCase {
 	}
 
 	@Test
+	public void testTrampolined() {
+		measure ("trampolined", { fibonacci.trampolined(n) })
+	}
+
+	@Test
 	public void testRecursive() {
 		// measure ("recursive", { fibonacci.recursive(n) })
 	}
@@ -46,6 +52,7 @@ class FibonacciTest extends GroovyTestCase {
 		def finalTime = System.currentTimeMillis()
 
 		def span = finalTime - inititalTime
-		println "Method '${method}' returns '${result}' and takes '${span}' millis to run"
+		// println "Method '${method}' returns '${result}' and takes '${span}' millis to run"
+		println "Method '${method}' takes '${span}' millis to run"
 	}
 }
