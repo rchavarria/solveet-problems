@@ -15,6 +15,7 @@ class FibonacciTest extends GroovyTestCase {
 		fibonacci.iterative(0)
 		fibonacci.limitedIterative(0)
 		fibonacci.recursive(0)
+		fibonacci.memoized(0)
 	}
 
 	@Test
@@ -25,6 +26,11 @@ class FibonacciTest extends GroovyTestCase {
 	@Test
 	public void testLimitedIterative() {
 		measure ("limited iterative", { fibonacci.limitedIterative(n) })
+	}
+
+	@Test
+	public void testMemoized() {
+		measure ("memoized", { fibonacci.memoized(n) })
 	}
 
 	@Test
