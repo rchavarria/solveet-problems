@@ -1,7 +1,7 @@
 RLE compression
 ===============
 
-Solution to the solveet.com problem: [Marvellous mazes](http://www.solveet.com/)
+Solution to the solveet.com problem: [Marvellous mazes](http://www.solveet.com/exercises/Dibujando-laberintos/125)
 
 The original problem can be found at [Algorithm Guru](http://algorithmguru.com/content/?viewpage=./contentfiles/showccode.php&id=143&type=r)
 
