@@ -2,12 +2,6 @@
  * Solucion completa y test en: https://github.com/rchavarria/solveet-problems/tree/master/fast-fibonacci
  */
 class Fibonacci {
-
-	def privateMemoized = { n ->
-		if(n == 0) 0
-    	else if(n == 1) 1
-    	else privateMemoized.call(n - 1) + privateMemoized.call(n - 2) as BigInteger
-	}.memoize()
 	
 	def recursive(n) {
 		if(n == 0) 0
@@ -45,4 +39,10 @@ class Fibonacci {
 	def memoized(n) {
 		privateMemoized.call(n)
 	}
+
+	def privateMemoized = { n ->
+		if(n == 0) 0
+    	else if(n == 1) 1
+    	else privateMemoized.call(n - 1) + privateMemoized.call(n - 2) as BigInteger
+	}.memoize()
 }
