@@ -13,7 +13,6 @@ class Fibonacci {
 		if(n == 0) 0
     	else if(n == 1) 1
 
-    	// for n >= 2
 		def cache = [0, 1]
 		(2..n).each {
 			cache << (cache[it - 1] + cache[it - 2] as BigInteger)
