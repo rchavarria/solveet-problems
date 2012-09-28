@@ -28,6 +28,8 @@ marvellous-mazes/target/*
 
 fast-fibonacci/target/*
 
+russian-olimpics/target/*
+
 *.class
 
 # Package Files #
