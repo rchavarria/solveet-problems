@@ -30,6 +30,8 @@ fast-fibonacci/target/*
 
 russian-olimpics/target/*
 
+senw-route/target/*
+
 *.class
 
 # Package Files #
