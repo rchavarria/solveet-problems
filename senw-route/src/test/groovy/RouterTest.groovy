@@ -34,4 +34,27 @@ class RouterTest extends GroovyTestCase {
         assertEquals(expectedPosition, position)
     }
 
+    @Test
+    public void testSingleRowRoute_EE() {
+        def map = [ [1, 1, 1, 0] ]
+        def route = "EE"
+
+        def position = router.follow(map, route)
+        
+        def expectedPosition = [1, 3]
+        assertEquals(expectedPosition, position)
+    }
+
+    @Test
+    public void testSingleRowRoute_EEE() {
+        def map = [ [1, 1, 1, 0] ]
+        def route = "EEE"
+
+        def position = router.follow(map, route)
+        
+        def expectedPosition = -1
+        assertEquals(expectedPosition, position)
+    }
+
+
 }
