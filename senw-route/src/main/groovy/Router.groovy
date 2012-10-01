@@ -11,18 +11,22 @@ class Router {
 
         try {
             route.each { movement ->
-                println "map[${row}][${column}]: ${map[row - 1][column - 1]}"
-                
                 switch(movement) {
                     case "E":
                         column++
-                        checkWalkableRow(map, row, column)
                         break
                     case "S":
                         row++
-                        checkWalkableRow(map, row, column)
+                        break
+                    case "N":
+                        row--
+                        break
+                    case "W":
+                        column--
                         break
                 }
+                
+                checkWalkableRow(map, row, column)
             }
 
         } catch (Exception e) {
