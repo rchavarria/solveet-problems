@@ -32,6 +32,8 @@ russian-olimpics/target/*
 
 senw-route/target/*
 
+loopless-route/target/*
+
 *.class
 
 # Package Files #
