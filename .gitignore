@@ -34,6 +34,10 @@ senw-route/target/*
 
 loopless-route/target/*
 
+hamming-numbers/target/*
+hamming-numbers/comments.txt
+
+
 *.class
 
 # Package Files #
