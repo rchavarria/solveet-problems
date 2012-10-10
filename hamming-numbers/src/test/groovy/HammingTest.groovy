@@ -9,7 +9,9 @@ class HammingTest extends GroovyTestCase {
 
     @Before
     public void setUp() {
-        hamming = new Hamming()
+        // select a Hamming solution: non-functional or functional
+        // hamming = new Hamming()
+        hamming = new FunctionalHamming()
     }
 
     @Test

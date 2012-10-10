@@ -8,8 +8,8 @@ class Hamming {
 
         for(def i = 0; i < n; i++) {
             sucession << sucession[i] * 2
-                      << sucession[i] * 3
-                      << sucession[i] * 5
+            sucession << sucession[i] * 3
+            sucession << sucession[i] * 5
             sucession = sucession.unique()
         }
 
