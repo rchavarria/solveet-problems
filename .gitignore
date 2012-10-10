@@ -41,6 +41,10 @@ hamming-numbers/comments.txt
 hamming-numbers-js/target/*
 hamming-numbers-js/comments.txt
 
+binary-sum/target/*
+binary-sum/comments.txt
+
+
 *.class
 
 # Package Files #
