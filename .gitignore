@@ -44,6 +44,13 @@ hamming-numbers-js/comments.txt
 binary-sum/target/*
 binary-sum/comments.txt
 
+spiral-matrix-coords/target/*
+spiral-matrix-coords/comments.txt
+
+spiral-matrix/target/*
+spiral-matrix/comments.txt
+
+
 
 *.class
 
