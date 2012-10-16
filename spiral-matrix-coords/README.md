@@ -1,5 +1,5 @@
-Route without loops
-===================
+Spiral matrix coords
+====================
 
 Solution to the solveet.com problem: [Spiral matrix coords](http://www.solveet.com/exercises/Coordenadas-de-un-numero-en-una-matriz-caracol-/51)
 
