@@ -11,19 +11,19 @@ A little background to explain the solution
 
 Given the following matrix:
 
- 1  2  3  4  5
-15 16 17 18  6
-14 23 24 19  7
-13 22 21 20  8
-11 12 11 10  9
+	 1  2  3  4  5
+	15 16 17 18  6
+	14 23 24 19  7
+	13 22 21 20  8
+	11 12 11 10  9
 
 There are three 'rings':
 
- 1  2  3  4  5     .  .  .  .  .     .  .  .  .  .
-15  .  .  .  6     . 16 17 18  .     .  .  .  .  .
-14  .  .  .  7     . 23  . 19  .     .  . 24  .  .
-13  .  .  .  8     . 22 21 20  .     .  .  .  .  .
-11 12 11 10  9     .  .  .  .  .     .  .  .  .  .
+	 1  2  3  4  5     .  .  .  .  .     .  .  .  .  .
+	15  .  .  .  6     . 16 17 18  .     .  .  .  .  .
+	14  .  .  .  7     . 23  . 19  .     .  . 24  .  .
+	13  .  .  .  8     . 22 21 20  .     .  .  .  .  .
+	11 12 11 10  9     .  .  .  .  .     .  .  .  .  .
 
 The 'startingPoint' or 'diagonalValue' of each ring is the lower number withing the ring:
 * 1 for the ring #1
