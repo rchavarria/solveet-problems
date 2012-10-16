@@ -50,6 +50,9 @@ spiral-matrix-coords/comments.txt
 spiral-matrix/target/*
 spiral-matrix/comments.txt
 
+bottom-right/target/*
+bottom-right/comments.txt
+
 
 
 *.class
