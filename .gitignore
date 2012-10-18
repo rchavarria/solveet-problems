@@ -53,6 +53,10 @@ spiral-matrix/comments.txt
 top-right/target/*
 top-right/comments.txt
 
+binary-sequence/target/*
+binary-sequence/comments.txt
+
+
 
 
 *.class
