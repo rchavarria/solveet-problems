@@ -13,7 +13,33 @@ class SMSTest extends GroovyTestCase {
     }
 
     @Test
-    public void test() {
+    public void testEmptyString() {
         assertEquals("", sms.translate(""))
+    }
+
+    @Test
+    public void testOneDigit() {
+        assertEquals("-", sms.translate("0"))
+    }
+
+    @Test
+    public void testTwoDigits() {
+        assertEquals(";", sms.translate("11"))
+    }
+
+    @Test
+    public void testThreeDigits() {
+        assertEquals("c", sms.translate("222"))
+    }
+
+    @Test
+    public void testFourDigits() {
+        assertEquals("3", sms.translate("3333"))
+    }
+
+    @Test
+    public void testExceedingDigits() {
+        assertEquals("m", sms.translate("6"))
+        assertEquals("m", sms.translate("66666"))
     }
 }
