@@ -1,5 +1,5 @@
-RLE compression
-===============
+Marvellous mazes
+================
 
 Solution to the solveet.com problem: [Marvellous mazes](http://www.solveet.com/exercises/Dibujando-laberintos/125)
 

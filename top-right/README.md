@@ -1,5 +1,5 @@
-Route without loops
-===================
+Top right
+=========
 
 Solution to the solveet.com problem: [Top right](http://www.solveet.com/exercises/Al-fondo-a-la-derecha/59)
 

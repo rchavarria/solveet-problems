@@ -1,5 +1,5 @@
-RLE compression
-===============
+Russian olimpics
+================
 
 Solution to the solveet.com problem: [Russian olimpics](http://www.solveet.com/exercises/Problema-de-las-Olimpiadas-rusas/38)
 
