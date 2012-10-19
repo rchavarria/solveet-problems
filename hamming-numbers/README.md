@@ -1,5 +1,5 @@
-Route without loops
-===================
+Hamming numbers
+===============
 
 Solution to the solveet.com problem: [Hamming numbers](http://www.solveet.com/exercises/Numeros-de-Hamming/45)
 

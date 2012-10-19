@@ -1,5 +1,5 @@
-Route without loops
-===================
+Binary sequence
+===============
 
 Solution to the solveet.com problem: [Binary sequence](http://www.solveet.com/exercises/Extraer-periodo-de-una-secuencia-binaria/60)
 

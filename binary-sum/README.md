@@ -1,5 +1,5 @@
-Route without loops
-===================
+Binary sum
+==========
 
 Solution to the solveet.com problem: [Binary sum](http://www.solveet.com/exercises/Suma-de-binarios/46)
 

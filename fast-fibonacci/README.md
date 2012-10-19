@@ -1,5 +1,5 @@
-RLE compression
-===============
+Fast fibonacci
+==============
 
 Solution to the solveet.com problem: [Fast fibonacci](http://www.solveet.com/exercises/Fibonacci-rapido/37)
 
