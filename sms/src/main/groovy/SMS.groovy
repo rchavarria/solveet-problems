@@ -55,3 +55,16 @@ class SMS {
 }
 
 // Showing how to use the class
+/*
+def sms = new SMS()
+assert "" == sms.translate("")
+assert "-" == sms.translate("0")
+assert ";" == sms.translate("11")
+assert "c" == sms.translate("222")
+assert "3" == sms.translate("3333")
+assert "m" == sms.translate("66666")
+assert "mama" == sms.translate("6262")
+assert "caca" == sms.translate("222 2 222 2")
+assert "mama" == sms.translate("6 2 6 2")
+assert "mama" == sms.translate("6 26 2")
+*/
