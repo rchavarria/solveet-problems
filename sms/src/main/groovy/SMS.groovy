@@ -18,10 +18,39 @@ class SMS {
     def translate(digits) {
         if("" == digits) return ""
 
-        def keyPressed = digits[0]
-        def times = digits.length()
-        def options = KEYBOARD[keyPressed]
-        options[(times % options.length()) - 1]
+        def keys = whichKeysHaveBeenPressed(digits)
+        keys.inject( "" ) { output, it ->
+            def options = KEYBOARD[it.key]
+            def optionIndex = (it.times % options.length()) - 1
+
+            output += options[optionIndex]
+        }
+    }
+
+    private whichKeysHaveBeenPressed(digits) {
+        def firstKeyAndTime = [ new KeyAndTimes(key: null, times: 0) ]
+
+        digits.inject( firstKeyAndTime ) { keys, digit ->
+            def lastKeyAndTimes = keys[ keys.size() - 1 ]
+
+            if (digit == " ") {
+                keys << new KeyAndTimes(key: null, times: 0)
+            } else if (lastKeyAndTimes.key == null) {
+                lastKeyAndTimes.key = digit
+                lastKeyAndTimes.times++
+            } else if (lastKeyAndTimes.key == digit) {
+                lastKeyAndTimes.times++
+            } else {
+                keys << new KeyAndTimes(key: digit, times: 1)
+            }
+
+            keys
+        }
+    }
+
+    private static class KeyAndTimes {
+        def key
+        def times
     }
 }
 

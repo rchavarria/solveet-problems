@@ -42,4 +42,23 @@ class SMSTest extends GroovyTestCase {
         assertEquals("m", sms.translate("6"))
         assertEquals("m", sms.translate("66666"))
     }
+
+    @Test
+    public void testDifferentDigitsWithoutSeparation() {
+        assertEquals("ma", sms.translate("62"))
+        assertEquals("mama", sms.translate("6262"))
+    }
+
+    @Test
+    public void testSameDigitsWithSeparation() {
+        assertEquals("ca", sms.translate("222 2"))
+        assertEquals("caca", sms.translate("222 2 222 2"))
+    }
+
+    @Test
+    public void testDifferentDigitsWithSeparation() {
+        assertEquals("ma", sms.translate("6 2"))
+        assertEquals("mama", sms.translate("6 2 6 2"))
+        assertEquals("mama", sms.translate("6 26 2"))
+    }
 }
