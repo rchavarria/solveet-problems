@@ -1,7 +1,7 @@
 /**
  * Complete solution and tests at: https://github.com/rchavarria/solveet-problems/tree/master/loopless-route-2
  */
-class LoopesRoute {
+class LooplessRoute {
 
     def makeItLoopless(path) {
         def firstStep = [point: [0, 0], movement: ""]
@@ -42,4 +42,9 @@ class LoopesRoute {
 
 // Showing how to use the class
 /*
-*/
+def route = new LooplessRoute()
+assert("", route.makeItLoopless("SENW"))
+assert("", route.makeItLoopless("SSNN"))
+assert("SE", route.makeItLoopless("SEEW"))
+assert("", route.makeItLoopless("SEEESWWNNW"))
+ */
