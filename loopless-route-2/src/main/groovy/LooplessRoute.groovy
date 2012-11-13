@@ -43,8 +43,8 @@ class LooplessRoute {
 // Showing how to use the class
 /*
 def route = new LooplessRoute()
-assert("", route.makeItLoopless("SENW"))
-assert("", route.makeItLoopless("SSNN"))
-assert("SE", route.makeItLoopless("SEEW"))
-assert("", route.makeItLoopless("SEEESWWNNW"))
- */
+assert "" == route.makeItLoopless("SENW")
+assert "" == route.makeItLoopless("SSNN")
+assert "SE" == route.makeItLoopless("SEEW")
+assert "" == route.makeItLoopless("SEEESWWNNW")
+*/
