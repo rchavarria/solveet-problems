@@ -61,7 +61,8 @@ binary-sequence/comments.txt
 sms/target/*
 sms/comments.txt
 
-
+sql-string-generator/target/*
+sql-string-generator/comments.txt
 
 
 *.class
