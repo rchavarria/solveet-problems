@@ -106,4 +106,15 @@ class SQLGenerator {
 
 // Showing how to use the class
 /*
+assert "SELECT * FROM users" == new SQLGenerator().table("users").select()
+assert "SELECT id, name FROM users" == new SQLGenerator().table("users").columns(["id", "name"]).select()
+assert "SELECT * FROM users WHERE groupable='TRUE' AND id=45 AND name='john'" == 
+            new SQLGenerator().table("users").criteria([name: "john", groupable: true, id: 45]).select()
+assert "DELETE FROM users" == new SQLGenerator().table("users").delete()
+assert "DELETE FROM users WHERE groupable='TRUE' AND id=45 AND name='john'" == 
+            new SQLGenerator().table("users").criteria([name: "john", groupable: true, id: 45]).delete()
+assert "INSERT INTO users (groupable, id, name) VALUES ('TRUE', 45, 'john')" == 
+            new SQLGenerator().table("users").criteria([name: "john", id: 45, groupable: true]).insert()
+assert "UPDATE users SET groupable='FALSE', id=51, name='john' WHERE id=45 AND name='jack'" == 
+            new SQLGenerator().table("users").newValues([id: 51, name: 'john', groupable: false]).criteria([id: 45, name: 'jack']).update()
 */
