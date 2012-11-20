@@ -64,6 +64,10 @@ sms/comments.txt
 sql-string-generator/target/*
 sql-string-generator/comments.txt
 
+darts-501-js/target/*
+darts-501-js/comments.txt
+
+
 
 *.class
 
