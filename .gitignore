@@ -67,6 +67,8 @@ sql-string-generator/comments.txt
 darts-501-js/target/*
 darts-501-js/comments.txt
 
+euclidean-distance-py/target/*
+euclidean-distance-py/comments.txt
 
 
 *.class
