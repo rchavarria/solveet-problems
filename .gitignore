@@ -70,6 +70,9 @@ darts-501-js/comments.txt
 euclidean-distance-py/target/*
 euclidean-distance-py/comments.txt
 
+hannoi-js/target/*
+hannoi-js/comments.txt
+
 
 *.class
 
