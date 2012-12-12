@@ -1,6 +1,8 @@
 //
 // Codigo completo (proyecto maven, tests, ...) se puede encontrar en:
 //     https://github.com/rchavarria/solveet-problems/tree/master/hannoi-js
+// Descripción detallada de la solución:
+//     http://rchavarria.github.com/blog/2012/12/12/solveet-torres-de-hannoi
 //
 function Hannoi(rings) {
     var self = this;
