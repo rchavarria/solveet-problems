@@ -1,5 +1,6 @@
 #
 # solucion a cifrado César en python
+#   para ver ésta y otras soluciones: http://github.com/rchavarria/solveet-problems/tree/master/caesar-ciphering-py
 #
 lowercase_alphabet = "abcdefghijklmnopqrstuvwxyz"
 uppercase_alphabet = lowercase_alphabet.upper()
