@@ -1,5 +1,8 @@
 /**
  * Complete solution and tests at: https://github.com/rchavarria/solveet-problems/tree/master/kata-code-breaker
+ *
+ * Run this command to play:
+ *      groovy src/main/groovy/CodeGreaker.groovy
  */
 class CodeBreaker {
 
@@ -40,7 +43,6 @@ class CodeBreaker {
         while(result != "****") {
             print "Escribe tu codigo: "
             def password = reader.readLine()
-            //def password = reader.readLine("Escribe tu codigo: ")
             result = unlock(password)
             println "Resultado de tu codigo: ${result}"
         }
