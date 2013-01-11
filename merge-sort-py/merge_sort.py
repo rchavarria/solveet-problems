@@ -22,7 +22,7 @@ def merge(left, right):
 	while(i < len_left or j < len_right):
 		if(i >= len_left):
 			result.append(right[j])
-			j = j+1
+			j = j + 1
 		elif(j >= len_right):
 			result.append(left[i])
 			i = i + 1
