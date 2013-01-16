@@ -3,27 +3,38 @@
 //     https://github.com/rchavarria/solveet-problems/tree/master/happy-number-js
 //
 
-var MAX_TRIALS = 20;
+var MAX_ITERATIONS = 20;
 
 function isHappyNumber(n) {
-    var trial = 1;
+    var iteration = 1;
     var currentNumber = sumOfSquares(n);
 
-    while(currentNumber != 1 && trial < MAX_TRIALS) {
+    while(currentNumber != 1 && iteration < MAX_ITERATIONS) {
         currentNumber = sumOfSquares(currentNumber);
-        trial ++;
+        iteration ++;
     }
 
-    return trial < MAX_TRIALS;
+    return iteration < MAX_ITERATIONS;
 };
 
 function sumOfSquares(n) {
-    var hundreths = Math.floor(n / 100);
-    var tenths = Math.floor((n % 100) / 10);
-    var units = n % 10;
+    var digits = splitDigits(n);
+    var sum = 0;
+    for(var i = 0; i < digits.length; i++) {
+        var d = digits[i];
+        sum += (d * d);
+    }
+    return sum;
+};
 
-    return units * units + tenths * tenths + hundreths * hundreths;
-}
+function splitDigits(n) {
+    var digits = [];
+    while(n > 0) {
+        digits.push(n % 10);
+        n = Math.floor(n / 10);
+    }
+    return digits;
+};
 
 //
 // Un test de Jasmine para comprobar la solucion
