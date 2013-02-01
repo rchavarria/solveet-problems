@@ -70,3 +70,13 @@ class BrainfuckInterpreter {
         output
     }
 }
+
+/* 
+// sample code to run the example
+def code = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]" +
+           ">++.>+.+++++++..+++.>++.<<+++++++++++++++." +
+           ">.+++.------.--------.>+.>."
+def interpreter = new BrainfuckInterpreter()
+def output = interpreter.execute(code)
+println output.join("")
+*/
