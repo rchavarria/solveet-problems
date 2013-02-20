@@ -1,5 +1,5 @@
 #
-# Complete code at https://github.com/rchavarria/solveet-problems/tree/master/hanoi.rb
+# Complete code at https://github.com/rchavarria/solveet-problems/tree/master/hannoi/hanoi.rb
 #
 
 def hanoi(ring, origin, aux, target)
