@@ -1,4 +1,4 @@
-# project specific ignores
+ project specific ignores
 solveet-simplicity-efficiency-problem-groovy/target/*
 
 solveet-kata-simple-list/target/*
@@ -90,7 +90,7 @@ hannoi-rb/comments.txt
 
 nicomachus-cube-rb/comments.txt
 
-
+perfect-number-rb/comments.txt
 
 *.class
 
