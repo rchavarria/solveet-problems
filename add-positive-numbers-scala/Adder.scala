@@ -2,11 +2,12 @@ import scala.io.Source
 
 class Adder {
 
-	def read(filePath: String): Int = {
-		val rawLines = Source.fromFile(filePath).getLines
-    	val infoLines = rawLines.drop(1)
-    	val intNumbers = infoLines.map(_.toInt)
-    	val positives = intNumbers.filter(_ > 0)
-    	positives.fold(0)(_ + _)
-	}
+    def read(filePath: String): Int = {
+        Source.fromFile(filePath)
+              .getLines         // obtiene todas las lineas
+              .drop(1)          // ignora la primera
+              .map(_.toInt)     // convierte numero de cada fila a entero
+              .filter(_ > 0)    // filtra los positivos
+              .sum              // suma
+    }
 }
