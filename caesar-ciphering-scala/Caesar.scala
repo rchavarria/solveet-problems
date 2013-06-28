@@ -12,9 +12,7 @@ class Caesar {
     	}.mkString
     }
 
-    def decipher(message: String, offset: Int): String = {
-    	cipher(message, -offset)
-    }
+    def decipher(message: String, offset: Int) = cipher(message, -offset)
 }
 
 object Caesar {
