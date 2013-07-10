@@ -1,0 +1,17 @@
+exit
+test-only HelloWorldSpec
+test
+exit
+test
+exit
+test-only HelloWorldSpec
+exit
+test
+import org.specs2
+import org.specs2._
+exit
+test-only HelloWorldSpec
+exit
+~tes-only HelloWorldSpec
+~test-only HelloWorldSpec
+exit
