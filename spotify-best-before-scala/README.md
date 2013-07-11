@@ -4,13 +4,8 @@ solveet caesar ciphering
 You can find the description of the problem and lots of published solutions at
 [solveet](http://www.solveet.com/exercises/Spotify-fecha-de-caducidad-/135).
 
-To run the test (it assumes that scalatest library is placed under `../lib`):
+To run the test SBT must be installed in your computer:
 
-	del *.class
-	scalac -cp ..\lib\scalatest_2.10-1.9.1.jar *.scala
-	scala -cp ..\lib\scalatest_2.10-1.9.1.jar org.scalatest.tools.Runner -oWDS -R .
+	sbt test
 
-Or everything in a single line (windows):
-
-	echo deleting... & del *.class & echo compiling... & scalac -cp ..\lib\scalatest_2.10-1.9.1.jar *.scala & echo running... & scala -cp ..\lib\scalatest_2.10-1.9.1.jar org.scalatest.tools.Runner -oWDS -R .
-
+That's it!
