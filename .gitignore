@@ -97,6 +97,9 @@ caesar-ciphering-scala/comments.txt
 spotify-best-before-scala/comments.txt
 spotify-best-before-scala/target/*
 
+merge-sort-scala/target/*
+merge-sort-scala/comments.txt
+
 
 
 *.class
