@@ -31,6 +31,16 @@ class MergeSortSpec extends Specification {
       solveet.sort(List(11, 10, 9, 8, 2, 3, 5, 6, 7, 1, 4)) must be equalTo(List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
     }
 
+    "sort shuffled lists" in {
+      10 until 100 foreach { i => 
+        val expected = List.range(0, i, 1)
+        val shuffled = util.Random.shuffle( expected )
+
+        solveet.sort( shuffled ) must be equalTo( expected )
+      }
+
+      1 must be equalTo(1) // mandatory for specs2 to work fine :(
+    }
   }
 
 }
