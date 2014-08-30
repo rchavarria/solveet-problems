@@ -42,11 +42,7 @@ class NumberFilter {
     return number >= 10 && number < 100;
   }
   
-  bool digitsSumTen(number) {
-    if (!allowed(number)) {
-      return false;
-    }
-    
+  bool digitsSumTen(number) {    
     int units = number % 10;
     int tenths = (number ~/ 10) % 10;
     
@@ -58,7 +54,7 @@ class NumberFilter {
     
     for (int i = 0; i < numbers.length; i++) {
       int actual = numbers[i];
-      if (digitsSumTen(actual)) {
+      if (allowed(actual) && digitsSumTen(actual)) {
         filtered.add(actual);
       }
     }
