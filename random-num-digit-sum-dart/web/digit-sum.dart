@@ -1,5 +1,10 @@
-import "dart:io";
 
 void main() {
-  stdout.writeln("Hello world!");
+  assertTrue(false, "Must be true");
+}
+
+void assertTrue(condition, msg) {
+  if (!condition) {
+    throw new Exception(msg);
+  }
 }
