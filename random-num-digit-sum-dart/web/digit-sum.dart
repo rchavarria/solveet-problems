@@ -1,13 +1,15 @@
 import "dart:io";
 
 void main() {
-  assertFalse(digitsSumTen(9), "Numbers below 10 are not allowed");
-  assertFalse(digitsSumTen(101), "Numbers greater than or equal to 100 are not allowed");
-  assertFalse(digitsSumTen(127), "Numbers greater than or equal to 100 are not allowed");
-  assertFalse(digitsSumTen(128), "Numbers greater than or equal to 100 are not allowed");
+  NumberFilter filter = new NumberFilter();
   
-  assertTrue(digitsSumTen(64), "64 digits sums 10");
-  assertFalse(digitsSumTen(10), "10 digits doesn't sum 10");
+  assertFalse(filter.digitsSumTen(9), "Numbers below 10 are not allowed");
+  assertFalse(filter.digitsSumTen(101), "Numbers greater than or equal to 100 are not allowed");
+  assertFalse(filter.digitsSumTen(127), "Numbers greater than or equal to 100 are not allowed");
+  assertFalse(filter.digitsSumTen(128), "Numbers greater than or equal to 100 are not allowed");
+  
+  assertTrue(filter.digitsSumTen(64), "64 digits sums 10");
+  assertFalse(filter.digitsSumTen(10), "10 digits doesn't sum 10");
   
   assertListsAreEqual(filterNumbers([]), [], "Filter an empty List must return an empty List");
   assertListsAreEqual(filterNumbers([10]), [], "If all numbers whose digits don't sum 10, it must return empty list");
@@ -39,24 +41,13 @@ void assertListsAreEqual(expected, actual, msg) {
   }
 }
 
-bool digitsSumTen(number) {
-  NumberFilter filter = new NumberFilter();
-  if (!filter.allowed(number)) {
-    return false;
-  }
-  
-  int units = number % 10;
-  int tenths = (number ~/ 10) % 10;
-  
-  return (units + tenths) == 10;
-}
-
 List filterNumbers(unfilteredNumbers) {
+  NumberFilter filter = new NumberFilter();
   List filtered = [];
   
   for (int i = 0; i < unfilteredNumbers.length; i++) {
     int actual = unfilteredNumbers[i];
-    if (digitsSumTen(actual)) {
+    if (filter.digitsSumTen(actual)) {
       filtered.add(unfilteredNumbers[i]);
     }
   }
@@ -68,5 +59,17 @@ class NumberFilter {
   
   bool allowed(number) {
     return number >= 10 && number < 100;
+  }
+  
+  bool digitsSumTen(number) {
+    NumberFilter filter = new NumberFilter();
+    if (!filter.allowed(number)) {
+      return false;
+    }
+    
+    int units = number % 10;
+    int tenths = (number ~/ 10) % 10;
+    
+    return (units + tenths) == 10;
   }
 }
