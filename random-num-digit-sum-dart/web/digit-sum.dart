@@ -2,20 +2,19 @@ import "dart:io";
 
 void main() {
   NumberFilter filter = new NumberFilter();
-  
-  assertFalse(filter.digitsSumTen(9), "Numbers below 10 are not allowed");
-  assertFalse(filter.digitsSumTen(101), "Numbers greater than or equal to 100 are not allowed");
-  assertFalse(filter.digitsSumTen(127), "Numbers greater than or equal to 100 are not allowed");
-  assertFalse(filter.digitsSumTen(128), "Numbers greater than or equal to 100 are not allowed");
-  
-  assertTrue(filter.digitsSumTen(64), "64 digits sums 10");
-  assertFalse(filter.digitsSumTen(10), "10 digits doesn't sum 10");
-  
+
+  // edge cases
+  assertListsAreEqual(filter.filterNumbers([9]), [], "Numbers less than 10 are not allowed");
+  assertListsAreEqual(filter.filterNumbers([100]), [], "Numbers greater than or equal to 100 are not allowed");
+  assertListsAreEqual(filter.filterNumbers([127]), [], "Numbers greater than or equal to 100 are not allowed, even if all digits sum 10");
+  assertListsAreEqual(filter.filterNumbers([128]), [], "Numbers greater than or equal to 100 are not allowed, even if units and tenths sum 10");
+
   assertListsAreEqual(filter.filterNumbers([]), [], "Filter an empty List must return an empty List");
   assertListsAreEqual(filter.filterNumbers([10]), [], "If all numbers whose digits don't sum 10, it must return empty list");
   assertListsAreEqual(filter.filterNumbers([10, 20, 30]), [], "If all numbers whose digits don't sum 10, it must return empty list");
   assertListsAreEqual(filter.filterNumbers([64]), [64], "If a number digits sums 10, it must be present in the returned array");
   assertListsAreEqual(filter.filterNumbers([19, 28, 37]), [19, 28, 37], "It must return all numbers whose digits sum 10");
+
   assertListsAreEqual(filter.filterNumbers([10, 19, 20, 28, 30, 37]), [19, 28, 37], "It must return all numbers whose digits sum 10");
   
   stdout.writeln("Ok!");
@@ -25,10 +24,6 @@ void assertTrue(condition, msg) {
   if (!condition) {
     throw new Exception(msg);
   }
-}
-
-void assertFalse(condition, msg) {
-  assertTrue(!condition, msg);
 }
 
 void assertListsAreEqual(expected, actual, msg) {
