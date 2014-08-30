@@ -11,6 +11,9 @@ void main() {
   assertListsAreEqual(filterNumbers([]), [], "Filter an empty List must return an empty List");
   assertListsAreEqual(filterNumbers([10]), [], "If all numbers whose digits don't sum 10, it must return empty list");
   assertListsAreEqual(filterNumbers([10, 20, 30]), [], "If all numbers whose digits don't sum 10, it must return empty list");
+  assertListsAreEqual(filterNumbers([64]), [64], "If a number digits sums 10, it must be present in the returned array");
+  assertListsAreEqual(filterNumbers([19, 28, 37]), [19, 28, 37], "It must return all numbers whose digits sum 10");
+  assertListsAreEqual(filterNumbers([10, 19, 20, 28, 30, 37]), [19, 28, 37], "It must return all numbers whose digits sum 10");
   
   stdout.writeln("Ok!");
 }
@@ -43,5 +46,13 @@ bool digitsSumTen(number) {
 }
 
 List filterNumbers(unfilteredNumbers) {
-  return [];  
+  List filtered = [];
+  
+  for (int i = 0; i < unfilteredNumbers.length; i++) {
+    if (digitsSumTen(unfilteredNumbers[i])) {
+      filtered.add(unfilteredNumbers[i]);
+    }
+  }
+
+  return filtered;
 }
