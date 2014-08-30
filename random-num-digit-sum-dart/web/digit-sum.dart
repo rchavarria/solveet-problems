@@ -62,8 +62,7 @@ class NumberFilter {
   }
   
   bool digitsSumTen(number) {
-    NumberFilter filter = new NumberFilter();
-    if (!filter.allowed(number)) {
+    if (!allowed(number)) {
       return false;
     }
     
