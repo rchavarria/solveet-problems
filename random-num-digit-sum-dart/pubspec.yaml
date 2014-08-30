@@ -1,0 +1,4 @@
+name: Random number digit sum
+description: Given a list of random numbers from 10 to 100, return the list of them
+whose digits sum are 10. Input = [12, 64]; returns [64] (1 + 2 != 10, 6 + 4 == 10)
+  
