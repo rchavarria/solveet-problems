@@ -4,6 +4,7 @@ void main() {
   assertFalse(digitsSumTen(9), "Numbers below 10 are not allowed");
   assertFalse(digitsSumTen(101), "Numbers greater than or equal to 100 are not allowed");
   assertFalse(digitsSumTen(127), "Numbers greater than or equal to 100 are not allowed");
+  assertFalse(digitsSumTen(128), "Numbers greater than or equal to 100 are not allowed");
   
   assertTrue(digitsSumTen(64), "64 digits sums 10");
   assertFalse(digitsSumTen(10), "10 digits doesn't sum 10");
@@ -38,7 +39,13 @@ void assertListsAreEqual(expected, actual, msg) {
   }
 }
 
+bool allowed(number) {
+  return number >= 10 && number < 100;
+}
+
 bool digitsSumTen(number) {
+  if (!allowed(number)) return false;
+  
   int units = number % 10;
   int tenths = (number ~/ 10) % 10;
   
@@ -49,7 +56,8 @@ List filterNumbers(unfilteredNumbers) {
   List filtered = [];
   
   for (int i = 0; i < unfilteredNumbers.length; i++) {
-    if (digitsSumTen(unfilteredNumbers[i])) {
+    int actual = unfilteredNumbers[i];
+    if (digitsSumTen(actual)) {
       filtered.add(unfilteredNumbers[i]);
     }
   }
