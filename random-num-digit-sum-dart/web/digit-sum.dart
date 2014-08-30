@@ -53,13 +53,13 @@ class NumberFilter {
     return (units + tenths) == 10;
   }
 
-  List filterNumbers(unfilteredNumbers) {
+  List filterNumbers(numbers) {
     List filtered = [];
     
-    for (int i = 0; i < unfilteredNumbers.length; i++) {
-      int actual = unfilteredNumbers[i];
+    for (int i = 0; i < numbers.length; i++) {
+      int actual = numbers[i];
       if (digitsSumTen(actual)) {
-        filtered.add(unfilteredNumbers[i]);
+        filtered.add(actual);
       }
     }
 
