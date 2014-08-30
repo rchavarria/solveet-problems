@@ -59,12 +59,11 @@ class NumberFilter {
   }
 
   List filterNumbers(unfilteredNumbers) {
-    NumberFilter filter = new NumberFilter();
     List filtered = [];
     
     for (int i = 0; i < unfilteredNumbers.length; i++) {
       int actual = unfilteredNumbers[i];
-      if (filter.digitsSumTen(actual)) {
+      if (digitsSumTen(actual)) {
         filtered.add(unfilteredNumbers[i]);
       }
     }
