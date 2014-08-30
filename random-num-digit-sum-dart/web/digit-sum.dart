@@ -44,7 +44,9 @@ bool allowed(number) {
 }
 
 bool digitsSumTen(number) {
-  if (!allowed(number)) return false;
+  if (!allowed(number)) {
+    return false;
+  }
   
   int units = number % 10;
   int tenths = (number ~/ 10) % 10;
