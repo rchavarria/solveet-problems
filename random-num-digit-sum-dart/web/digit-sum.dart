@@ -39,12 +39,9 @@ void assertListsAreEqual(expected, actual, msg) {
   }
 }
 
-bool allowed(number) {
-  return number >= 10 && number < 100;
-}
-
 bool digitsSumTen(number) {
-  if (!allowed(number)) {
+  NumberFilter filter = new NumberFilter();
+  if (!filter.allowed(number)) {
     return false;
   }
   
@@ -65,4 +62,11 @@ List filterNumbers(unfilteredNumbers) {
   }
 
   return filtered;
+}
+
+class NumberFilter {
+  
+  bool allowed(number) {
+    return number >= 10 && number < 100;
+  }
 }
