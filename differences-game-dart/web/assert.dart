@@ -1,4 +1,4 @@
-class AssertThat {
+class Asserts {
   
   void isTrue(condition, message) {
     if (!condition) {
