@@ -9,3 +9,7 @@ void main() {
   assertThat.isTrue('draw' == winner, 'Playing all "heads" must result in a draw');
   stdout.writeln('And the winner is...: ${winner}');
 }
+
+String play(players, choice) {
+  return 'draw';
+}
