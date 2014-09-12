@@ -45,6 +45,9 @@ String play(players, choice) {
 
   } else if (choice[1] != choice[2]) {
     return players[2];
+
+  } else if (choice[2] != choice[3]) {
+    return players[3];
   }
   
   return 'draw';
