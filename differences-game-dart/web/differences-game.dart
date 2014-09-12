@@ -19,6 +19,9 @@ void main() {
 
   winner = play(['Jane', 'Dave', 'Anne'], [TAILS, HEADS, TAILS]);
   assertThat.isTrue('Dave' == winner, 'Dave must win, he plays different');
+
+  winner = play(['Jane', 'Dave', 'Anne'], [TAILS, TAILS, HEADS]);
+  assertThat.isTrue('Anne' == winner, 'Anne must win, she plays different');
   
   stdout.writeln('Ok!');
 }
