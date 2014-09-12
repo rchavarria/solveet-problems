@@ -10,26 +10,29 @@ void main() {
 
   String winner = '';
   
-  winner = playWithPlayers([HEADS, HEADS, HEADS]);
+  winner = playWithPlayers([HEADS, HEADS, HEADS, HEADS]);
   assertThat.isTrue('draw' == winner, 'Playing all "heads" must result in a draw');
 
-  winner = playWithPlayers([TAILS, TAILS, TAILS]);
+  winner = playWithPlayers([TAILS, TAILS, TAILS, TAILS]);
   assertThat.isTrue('draw' == winner, 'Playing all "tails" must result in a draw');
 
-  winner = playWithPlayers([HEADS, TAILS, TAILS]);
+  winner = playWithPlayers([HEADS, TAILS, TAILS, TAILS]);
   assertThat.isTrue('Jane' == winner, 'Jane must win, she plays different');
 
-  winner = playWithPlayers([TAILS, HEADS, TAILS]);
+  winner = playWithPlayers([TAILS, HEADS, TAILS, TAILS]);
   assertThat.isTrue('Dave' == winner, 'Dave must win, he plays different');
 
-  winner = playWithPlayers([TAILS, TAILS, HEADS]);
+  winner = playWithPlayers([TAILS, TAILS, HEADS, TAILS]);
   assertThat.isTrue('Anne' == winner, 'Anne must win, she plays different');
+
+  winner = playWithPlayers([TAILS, TAILS, TAILS, HEADS]);
+  assertThat.isTrue('Pete' == winner, 'Pete must win, she plays different');
   
   stdout.writeln('Ok!');
 }
 
 String playWithPlayers(choices) {
-  return play(['Jane', 'Dave', 'Anne'], choices);
+  return play(['Jane', 'Dave', 'Anne', 'Pete'], choices);
 }
 
 String play(players, choice) {
