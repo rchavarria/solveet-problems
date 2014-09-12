@@ -44,9 +44,17 @@ String play(players, choice) {
     return players[1];
 
   } else if (choice[1] != choice[2]) {
+    if (choice[2] == choice[3]) {
+      return players[1];
+    }
+
     return players[2];
 
   } else if (choice[2] != choice[3]) {
+//    if (choice[3] == choice[4]) {
+//      return players[2];
+//    }
+
     return players[3];
   }
   
