@@ -1,4 +1,3 @@
-import "dart:io";
 import "assert.dart";
 
 void main() {
@@ -7,7 +6,9 @@ void main() {
 
   String winner = play(['Jane', 'Dave', 'Anne'], ['heads', 'heads', 'heads']);
   assertThat.isTrue('draw' == winner, 'Playing all "heads" must result in a draw');
-  stdout.writeln('And the winner is...: ${winner}');
+
+  winner = play(['Jane', 'Dave', 'Anne'], ['tails', 'tails', 'tails']);
+  assertThat.isTrue('draw' == winner, 'Playing all "tails" must result in a draw');
 }
 
 String play(players, choice) {
