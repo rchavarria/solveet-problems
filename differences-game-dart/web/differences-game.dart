@@ -1,3 +1,4 @@
+import "dart:io";
 import "assert.dart";
 
 void main() {
@@ -12,8 +13,14 @@ void main() {
 
   winner = play(['Jane', 'Dave', 'Anne'], ['heads', 'tails', 'tails']);
   assertThat.isTrue('Jane' == winner, 'Jane play different');
+  
+  stdout.writeln('Ok!');
 }
 
 String play(players, choice) {
+  if (choice[0] != choice[1]) {
+    return players[0];
+  }
+  
   return 'draw';
 }
