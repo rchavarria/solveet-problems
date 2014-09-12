@@ -37,11 +37,11 @@ String playWithPlayers(choices) {
 
 String play(players, choice) {
   if (choice[0] != choice[1]) {
-    if (choice[1] != choice[2]) {
-      return players[1];
+    if (choice[1] == choice[2]) {
+      return players[0];
     }
 
-    return players[0];
+    return players[1];
 
   } else if (choice[1] != choice[2]) {
     return players[2];
