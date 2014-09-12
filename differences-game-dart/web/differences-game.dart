@@ -33,6 +33,9 @@ String play(players, choice) {
     }
 
     return players[0];
+
+  } else if (choice[1] != choice[2]) {
+    return players[2];
   }
   
   return 'draw';
