@@ -9,6 +9,9 @@ void main() {
 
   winner = play(['Jane', 'Dave', 'Anne'], ['tails', 'tails', 'tails']);
   assertThat.isTrue('draw' == winner, 'Playing all "tails" must result in a draw');
+
+  winner = play(['Jane', 'Dave', 'Anne'], ['heads', 'tails', 'tails']);
+  assertThat.isTrue('Jane' == winner, 'Jane play different');
 }
 
 String play(players, choice) {
