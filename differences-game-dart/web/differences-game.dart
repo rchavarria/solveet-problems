@@ -38,7 +38,10 @@ String play(players, choices) {
     return players[2];
   }
   
-  players.add(players.removeAt(0));
-  choices.add(choices.removeAt(0));
-  return play(players, choices);
+  return play(rotate(players), rotate(choices));
+}
+
+List rotate(list) {
+  list.add(list.removeAt(0));
+  return list;
 }
