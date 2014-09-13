@@ -20,6 +20,9 @@ void main() {
   playWithPredefinedPlayers('draw', [Choices.TAILS, Choices.TAILS, Choices.TAILS], 'The game is a draw');
     
   stdout.writeln('Ok!');
+  
+  // will print Carbon
+  stdout.writeln(play(['Carbon', 'Oxigen', 'Hidogen'], ['heads', 'tails', 'tails']));
 }
 
 void playWithPredefinedPlayers(winner, choices, message) {
