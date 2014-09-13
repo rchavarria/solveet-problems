@@ -8,3 +8,7 @@ void main() {
   
   stdout.writeln('Ok!');
 }
+
+String play(players, choices) {
+  return 'Dave';
+}
