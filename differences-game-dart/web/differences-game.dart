@@ -30,14 +30,8 @@ void playWithPredefinedPlayers(winner, choices, message) {
 }
 
 String play(players, choices) {
-  if (choices.every((choice) => choice == choices[0])) {
-    return 'draw';
-  }
-
-  if (choices[0] == choices[1]) {
-    return players[2];
-  }
-  
+  if (choices.every((choice) => choice == choices[0])) return 'draw';
+  if (choices[0] == choices[1]) return players[2];
   return play(rotate(players), rotate(choices));
 }
 
