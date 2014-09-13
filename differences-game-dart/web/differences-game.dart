@@ -30,11 +30,11 @@ void playWithPredefinedPlayers(winner, choices, message) {
 }
 
 String play(players, choices) {
-  if (choices[0] == choices[1]) {
-    if (choices[1] == choices[2]) {
-      return 'draw';
-    }
+  if (choices.every((choice) => choice == choices[0])) {
+    return 'draw';
+  }
 
+  if (choices[0] == choices[1]) {
     return players[2];
   }
   
