@@ -13,6 +13,11 @@ void main() {
   playWithPredefinedPlayers('John', [Choices.HEADS, Choices.TAILS, Choices.HEADS], 'John must win');
   playWithPredefinedPlayers('Jane', [Choices.TAILS, Choices.HEADS, Choices.HEADS], 'Jane must win');
   playWithPredefinedPlayers('draw', [Choices.HEADS, Choices.HEADS, Choices.HEADS], 'The game is a draw');
+
+  playWithPredefinedPlayers('Dave', [Choices.TAILS, Choices.TAILS, Choices.HEADS], 'Dave must win');
+  playWithPredefinedPlayers('John', [Choices.TAILS, Choices.HEADS, Choices.TAILS], 'John must win');
+  playWithPredefinedPlayers('Jane', [Choices.HEADS, Choices.TAILS, Choices.TAILS], 'Jane must win');
+  playWithPredefinedPlayers('draw', [Choices.TAILS, Choices.TAILS, Choices.TAILS], 'The game is a draw');
     
   stdout.writeln('Ok!');
 }
