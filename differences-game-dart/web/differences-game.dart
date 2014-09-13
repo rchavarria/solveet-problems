@@ -26,6 +26,10 @@ void playWithPredefinedPlayers(winner, choices, message) {
 
 String play(players, choices) {
   if (choices[0] == choices[1]) {
+    if (choices[1] == choices[2]) {
+      return 'draw';
+    }
+
     return players[2];
   }
   
