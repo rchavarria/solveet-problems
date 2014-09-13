@@ -28,5 +28,9 @@ String play(players, choices) {
     return players[2];
   }
   
-  return players[1];
+  if (choices[0] == choices[2]) {
+    return players[1];
+  }
+  
+  return players[0];
 }
