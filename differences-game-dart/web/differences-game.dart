@@ -9,10 +9,17 @@ class Choices {
 void main() {
   Asserts assertThat = new Asserts();
 
-  assertThat.areEqual('Dave', play( ['Jane', 'John', 'Dave'], [Choices.HEADS, Choices.HEADS, Choices.TAILS] ), message: 'Dave must win');
-  assertThat.areEqual('John', play( ['Jane', 'John', 'Dave'], [Choices.HEADS, Choices.TAILS, Choices.HEADS] ), message: 'John must win');
+  playWithPredefinedPlayers('Dave', [Choices.HEADS, Choices.HEADS, Choices.TAILS], 'Dave must win');
+  playWithPredefinedPlayers('John', [Choices.HEADS, Choices.TAILS, Choices.HEADS], 'John must win');
   
   stdout.writeln('Ok!');
+}
+
+void playWithPredefinedPlayers(winner, choices, message) {
+  Asserts assertThat = new Asserts();
+  List players = ['Jane', 'John', 'Dave'];
+  
+  assertThat.areEqual(winner, play(players, choices), message: message);
 }
 
 String play(players, choices) {
