@@ -10,8 +10,8 @@ Requirements:
 
 To run tests from command line:
 
-- Be sure Dart SDK is in the PATH. Run `dart differences-game.dart`
+- Be sure Dart SDK is in the PATH. Run `dart web/digit-sum.dart`
 
 To run tests from Dart editor:
 
-- right click on `differences-game.dart' file, and choose Run
+- right click on `web/digit-sum.dart' file, and choose Run
