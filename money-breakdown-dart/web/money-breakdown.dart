@@ -21,12 +21,13 @@ main() {
 }
 
 String breakdown(int amount) {
-  List values = [2, 1];
+  List values = [5, 2, 1];
   List results = [];
   
   values.forEach((value) {
     if (amount >= value) {
-      results.add('1 coin of ' + value.toString() + '€');
+      String coinOrBill = (value > 2) ? 'bill' : 'coin';
+      results.add('1 ' + coinOrBill + ' of ' + value.toString() + '€');
       amount -= value;
     }
   });
