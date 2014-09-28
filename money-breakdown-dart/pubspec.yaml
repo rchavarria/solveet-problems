@@ -1,0 +1,6 @@
+name: money_breakdown
+author: rchavarria
+description: Break down in bills and coins a given amount of money
+homepage: http://rchavarria.github.io
+dev_dependencies:
+  unittest: '>=0.10.0'
