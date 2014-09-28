@@ -17,9 +17,15 @@ main() {
 }
 
 String breakdown(int amount) {
-  if (amount == 2) {
-    return '1 coin of 2€';
-  }
-  return '1 coin of 1€';
+  List values = [2, 1];
+  List results = [];
+  
+  values.forEach((value) {
+    if (amount >= value) {
+      results.add('1 coin of ' + value.toString() + '€');
+      amount -= value;
+    }
+  });
+  
+  return results.join(', ');
 }
-
