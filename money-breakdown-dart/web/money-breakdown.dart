@@ -17,6 +17,10 @@ main() {
   test('5€ breaks down as a 1 bill of 5€', () {
     expect(breakdown(5), equals('1 bill of 5€'));
   });
+  
+  test('10€ breaks down as a 1 bill of 10€', () {
+    expect(breakdown(10), equals('1 bill of 10€'));
+  });
 
 }
 
@@ -44,3 +48,4 @@ String breakdown(int amount) {
   
   return results.join(', ');
 }
+
