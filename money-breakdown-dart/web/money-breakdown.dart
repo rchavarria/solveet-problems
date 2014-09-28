@@ -13,6 +13,10 @@ main() {
   test('3€ breaks down as a 1 coin of 2€, 1 coin of 1€', () {
     expect(breakdown(3), equals('1 coin of 2€, 1 coin of 1€'));
   });
+  
+  test('5€ breaks down as a 1 bill of 5€', () {
+    expect(breakdown(5), equals('1 bill of 5€'));
+  });
 
 }
 
