@@ -34,6 +34,14 @@ main() {
     expect(breakdown(500), equals('1 bill of 500€'));
   });
 
+  test('Other edge cases that breaks down with several coins/bills', () {
+    expect(breakdown(9), equals('1 bill of 5€, 2 coins of 2€'));
+    expect(breakdown(19), equals('1 bill of 10€, 1 bill of 5€, 2 coins of 2€'));
+    expect(breakdown(49), equals('2 bills of 20€, 1 bill of 5€, 2 coins of 2€'));
+    expect(breakdown(1999), 
+           equals('3 bills of 500€, 2 bills of 200€, 1 bill of 50€, 2 bills of 20€, 1 bill of 5€, 2 coins of 2€'));
+  });
+  
 }
 
 class Money {
