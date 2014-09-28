@@ -45,9 +45,16 @@ String breakdown(int amount) {
   List results = [];
   moneys.forEach((money) {
     var value = money.value;
-    if (amount >= value) {
-      results.add('1 ' + money.type + ' of ' + value.toString() + '€');
+    
+    int quantity = 0;
+    while (amount >= value) {
+      quantity++;
       amount -= value;
+    }
+
+    if (quantity > 0) {
+      String plural = (quantity > 1) ? 's' : '';
+      results.add(quantity.toString() + ' ' + money.type + plural + ' of ' + value.toString() + '€');
     }
   });
   
