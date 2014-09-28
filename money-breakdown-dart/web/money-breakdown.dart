@@ -20,15 +20,24 @@ main() {
 
 }
 
+class Money {
+  String type;
+  int value;
+  Money(this.type, this.value);
+}
+
 String breakdown(int amount) {
-  List values = [5, 2, 1];
+  List moneys = [
+                 new Money('bill', 5),
+                 new Money('coin', 2),
+                 new Money('coin', 1)
+                 ];
+
   List results = [];
-  
-  values.forEach((value) {
-    if (amount >= value) {
-      String coinOrBill = (value > 2) ? 'bill' : 'coin';
-      results.add('1 ' + coinOrBill + ' of ' + value.toString() + '€');
-      amount -= value;
+  moneys.forEach((money) {
+    if (amount >= money.value) {
+      results.add('1 ' + money.type + ' of ' + money.value.toString() + '€');
+      amount -= money.value;
     }
   });
   
