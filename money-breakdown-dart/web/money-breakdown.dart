@@ -53,11 +53,19 @@ String breakdown(int amount) {
     }
 
     if (quantity > 0) {
-      String plural = (quantity > 1) ? 's' : '';
-      results.add(quantity.toString() + ' ' + money.type + plural + ' of ' + value.toString() + '€');
+      results.add(formatResult(money, quantity));
     }
   });
   
   return results.join(', ');
+}
+
+String formatResult(money, quantity) {
+  String plural = '';
+  if (quantity > 1) {
+    plural = 's';
+  }
+  
+  return quantity.toString() + ' ' + money.type + plural + ' of ' + money.value.toString() + '€';
 }
 
