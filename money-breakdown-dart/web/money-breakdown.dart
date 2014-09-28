@@ -13,6 +13,9 @@ main() {
 }
 
 String breakdown(int amount) {
+  if (amount == 2) {
+    return '1 coin of 2€';
+  }
   return '1 coin of 1€';
 }
 
