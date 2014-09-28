@@ -32,6 +32,7 @@ class Money {
 
 String breakdown(int amount) {
   List moneys = [
+                 new Money('bill', 10),
                  new Money('bill', 5),
                  new Money('coin', 2),
                  new Money('coin', 1)
