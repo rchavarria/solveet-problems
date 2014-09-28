@@ -25,6 +25,14 @@ main() {
   test('10€ breaks down as a 1 bill of 10€', () {
     expect(breakdown(10), equals('1 bill of 10€'));
   });
+  
+  test('The rest of exact bills', () {
+    expect(breakdown(20), equals('1 bill of 20€'));
+    expect(breakdown(50), equals('1 bill of 50€'));
+    expect(breakdown(100), equals('1 bill of 100€'));
+    expect(breakdown(200), equals('1 bill of 200€'));
+    expect(breakdown(500), equals('1 bill of 500€'));
+  });
 
 }
 
@@ -36,6 +44,11 @@ class Money {
 
 String breakdown(int amount) {
   List moneys = [
+                 new Money('bill', 500),
+                 new Money('bill', 200),
+                 new Money('bill', 100),
+                 new Money('bill', 50),
+                 new Money('bill', 20),
                  new Money('bill', 10),
                  new Money('bill', 5),
                  new Money('coin', 2),
