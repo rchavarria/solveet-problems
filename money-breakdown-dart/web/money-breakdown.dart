@@ -7,3 +7,8 @@ main() {
   });
 
 }
+
+String breakdown(int amount) {
+  return '1 coin of 1€';
+}
+
