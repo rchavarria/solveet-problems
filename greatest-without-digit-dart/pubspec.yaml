@@ -1,0 +1,6 @@
+name: greatest_without_digit
+author: rchavarria
+description: Calculate the greatest number, Z, less than X that does not contain digit Y
+homepage: http://rchavarria.github.io
+dev_dependencies:
+  unittest: '>=0.10.0'
