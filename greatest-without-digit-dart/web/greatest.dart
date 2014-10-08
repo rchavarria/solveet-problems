@@ -22,7 +22,7 @@ void main() {
 
       test('2 is less than 3 without 1', () {
         int z = lessThan(3, 1);
-        expect(2, equals(z));
+	expect(2, equals(z));
       });
 
     });
@@ -31,6 +31,12 @@ void main() {
 }
 
 int lessThan(x, y) {
-  return y - 1;
+  int z = x - 1;
+
+  if (z == y) {
+    return lessThan(z, y);
+  }
+
+  return z;
 }
 
