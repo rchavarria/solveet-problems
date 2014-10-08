@@ -21,6 +21,6 @@ void main() {
 }
 
 int lessThan(x, y) {
-  return 0;
+  return y - 1;
 }
 
