@@ -20,6 +20,11 @@ void main() {
         expect(0, equals(z));
       });
 
+      test('2 is less than 3 without 1', () {
+        int z = lessThan(3, 1);
+        expect(2, equals(z));
+      });
+
     });
 
   });
