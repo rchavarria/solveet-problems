@@ -15,6 +15,11 @@ void main() {
         expect(1, equals(z));
       });
 
+      test('0 is less than 2 without 1', () {
+        int z = lessThan(2, 1);
+        expect(0, equals(z));
+      });
+
     });
 
   });
