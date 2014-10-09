@@ -30,6 +30,16 @@ void main() {
 	expect(9, equals(z));
       });
 
+      test('19 is less than 29 without 2', () {
+        int z = lessThan(29, 2);
+	expect(19, equals(z));
+      });
+
+      test('26 is less than 28 without 7', () {
+        int z = lessThan(28, 7);
+	expect(26, equals(z));
+      });
+
     });
 
   });
@@ -38,10 +48,21 @@ void main() {
 int lessThan(x, y) {
   int z = x - 1;
 
-  if (z == y) {
+  if (containsDigit(z, y)) {
     return lessThan(z, y);
   }
 
   return z;
+}
+
+bool containsDigit(z, y) {
+  if (z == 0) {
+    return false;
+  }
+
+  int modulus = z % 10;
+  int divisor = (z / 10).floor();
+
+  return (modulus == y) || containsDigit(divisor, y);
 }
 
