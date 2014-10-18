@@ -23,6 +23,16 @@ void main() {
       String mixed = mix('m', 'xe');
       expect(mixed, equals('mxe'));
     });
+    
+    test('Mixes two chars from first, one char from last', () {
+      String mixed = mix('mi', 'x');
+      expect(mixed, equals('mix'));
+    });
+    
+    test('Mixes more than 2 chars from firts', () {
+      String mixed = mix('mixe', 'd ');
+      expect(mixed, equals('mid xe'));
+    });
 
   });
 }
