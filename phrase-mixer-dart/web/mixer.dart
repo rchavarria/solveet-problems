@@ -6,7 +6,8 @@ void main() {
     test('Mixes the two first characters of the first phrase', () {
       String mixed = mix('mi', '');
       expect(mixed, equals('mi'));
-    }
+    });
+
   });
 }
 
