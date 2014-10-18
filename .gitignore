@@ -108,3 +108,7 @@ merge-sort-scala/comments.txt
 *.jar
 *.war
 *.ear
+
+# Temporal vim files
+*.swp
+
