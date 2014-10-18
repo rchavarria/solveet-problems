@@ -12,6 +12,11 @@ void main() {
       String mixed = mix('', 'xe');
       expect(mixed, equals('xe'));
     });
+    
+    test('Mixes two chars from first, two chars from last', () {
+      String mixed = mix('mi', 'xe');
+      expect(mixed, equals('mixe'));
+    });
 
   });
 }
