@@ -43,6 +43,6 @@ String mix(String first, String second) {
   }
 
   int maxLength = min(2, first.length);
-  return first + mix(second, first.substring(maxLength));
+  return first.substring(0, maxLength) + mix(second, first.substring(maxLength));
 }
 
