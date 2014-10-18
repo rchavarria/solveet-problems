@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:unittest/unittest.dart';
 
 void main() {
@@ -31,6 +32,7 @@ String mix(String first, String second) {
     return second;
   }
 
-  return first + mix(second, first.substring(2));
+  int maxLength = min(2, first.length);
+  return first + mix(second, first.substring(maxLength));
 }
 
