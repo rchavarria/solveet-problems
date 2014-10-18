@@ -29,9 +29,24 @@ void main() {
       expect(mixed, equals('mix'));
     });
     
-    test('Mixes more than 2 chars from firts', () {
+    test('Mixes more than 2 chars from first', () {
       String mixed = mix('mixe', 'd ');
       expect(mixed, equals('mid xe'));
+    });
+    
+    test('Mixes more than 2 chars from last', () {
+      String mixed = mix('mi', 'xed ');
+      expect(mixed, equals('mixed '));
+    });
+    
+    test('Mixes 3 and 3', () {
+      String mixed = mix('mixed', 'mixed');
+      expect(mixed, equals('mimixexedd'));
+    });
+    
+    test('Mixes 5 and 5', () {
+      String mixed = mix('12345', '54321');
+      expect(mixed, equals('1254343251'));
     });
 
   });
