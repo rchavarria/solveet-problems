@@ -7,6 +7,11 @@ void main() {
       String mixed = mix('mi', '');
       expect(mixed, equals('mi'));
     });
+    
+    test('Mixes the two frist characters of the second phrase', () {
+      String mixed = mix('', 'xe');
+      expect(mixed, equals('xe'));
+    });
 
   });
 }
