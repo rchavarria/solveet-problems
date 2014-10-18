@@ -17,15 +17,20 @@ void main() {
       String mixed = mix('mi', 'xe');
       expect(mixed, equals('mixe'));
     });
+    
+    test('Mixes one char from first, two chars from last', () {
+      String mixed = mix('m', 'xe');
+      expect(mixed, equals('mxe'));
+    });
 
   });
 }
 
 String mix(String first, String second) {
-  if (first.length >= 2) {
-    return first + mix(second, first.substring(2));
+  if (first.isEmpty) {
+    return second;
   }
 
-  return second;
+  return first + mix(second, first.substring(2));
 }
 
