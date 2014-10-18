@@ -22,8 +22,8 @@ void main() {
 }
 
 String mix(String first, String second) {
-  if (second.isEmpty) {
-    return first;
+  if (first.length >= 2) {
+    return first + mix(second, first.substring(2));
   }
 
   return second;
