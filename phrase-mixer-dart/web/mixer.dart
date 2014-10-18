@@ -11,3 +11,7 @@ void main() {
   });
 }
 
+String mix(String first, String second) {
+  return 'mi';
+}
+
