@@ -17,6 +17,10 @@ void main() {
           expect(5, juggler.sequence(5)[0]);
       });
 
+      test('returns N square root as second number if N is even', () {
+          Juggler juggler = new Juggler();
+          expect(4, juggler.sequence(16)[1]);
+      });
   });
 }
 
