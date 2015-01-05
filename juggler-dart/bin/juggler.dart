@@ -48,6 +48,18 @@ void main() {
       });
 
   });
+
+  group('Juggler results', () {
+
+      test('from 1 to 100', () {
+          Juggler juggler = new Juggler();
+          for (int i = 1; i <= 100; i++) {
+              var seq = juggler.sequence(i);
+              print('N=${i}, Length=${seq.length}, Max=${seq.reduce(max)}, Seq=${seq}');
+          }
+      });
+
+  });
 }
 
 class Juggler {
