@@ -37,6 +37,10 @@ void main() {
           expect(true, juggler.sequence(4).length > 2);
       });
 
+      test('concrete examples', () {
+          expect([4, 2, 1], juggler.sequence(4));
+      });
+
   });
 }
 
