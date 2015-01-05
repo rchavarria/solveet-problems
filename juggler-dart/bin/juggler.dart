@@ -3,7 +3,7 @@ import 'package:unittest/unittest.dart';
 void main() {
   group('Juggler sequence', () {
 
-      test('for numbers less than 1', () {
+      test('is emptyis empty  for numbers less than 1', () {
           Juggler juggler = new Juggler();
           List<int> sequence = juggler.sequence(0);
           expect([], sequence);
