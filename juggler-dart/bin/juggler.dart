@@ -1,4 +1,5 @@
 import 'package:unittest/unittest.dart';
+import 'dart:math';
 
 void main() {
   group('Juggler sequence', () {
@@ -29,7 +30,9 @@ class Juggler {
         if (N < 1) {
             return [];
         }
-        return [N];
+
+        int squareRoot = sqrt(N).floor();
+        return [N, squareRoot];
     }
 }
 
