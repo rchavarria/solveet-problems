@@ -7,8 +7,7 @@ void main() {
       Juggler juggler = new Juggler();
 
       test('is empty  for numbers less than 1', () {
-          List<int> sequence = juggler.sequence(0);
-          expect([], sequence);
+          expect([], juggler.sequence(0));
       });
 
       test('returns N as the first number in it', () {
