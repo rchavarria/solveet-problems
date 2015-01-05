@@ -19,6 +19,11 @@ void main() {
       test('returns N square root as second number if N is even', () {
           expect(4, juggler.sequence(16)[1]);
       });
+
+      test('returns the floor of N square root when it is not an integer', () {
+          expect(2, juggler.sequence(5)[1]);
+      });
+
   });
 }
 
