@@ -9,10 +9,12 @@ void main() {
           expect([], sequence);
       });
 
-      test('is 1 for number 1', () {
+      test('returns N as the first number in it', () {
           Juggler juggler = new Juggler();
-          List<int> sequence = juggler.sequence(1);
-          expect([1], sequence);
+
+          expect(1, juggler.sequence(1));
+          expect(2, juggler.sequence(2));
+          expect(5, juggler.sequence(5));
       });
 
   });
