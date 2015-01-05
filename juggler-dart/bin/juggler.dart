@@ -2,7 +2,7 @@ import 'package:unittest/unittest.dart';
 import 'dart:math';
 
 void main() {
-  group('Juggler sequence', () {
+    group('Juggler sequence', () {
 
       Juggler juggler = new Juggler();
 
@@ -47,9 +47,9 @@ void main() {
           expect([9, 27, 140, 11, 36, 6, 2, 1], juggler.sequence(9));
       });
 
-  });
+    });
 
-  group('Juggler results', () {
+    group('Juggler results', () {
 
       test('from 1 to 100', () {
           Juggler juggler = new Juggler();
@@ -59,7 +59,7 @@ void main() {
           }
       });
 
-  });
+    });
 }
 
 class Juggler {
