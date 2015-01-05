@@ -46,17 +46,20 @@ class Juggler {
             return [];
         }
 
+        List<int> result = [N];
         if (N == 1) {
-            return [1];
+            return result;
         }
 
-        int squareRoot = sqrt(N).floor();
-        int threeSecondsRoot = pow(N, 3/2).floor();
-
-        int next = (N % 2 == 0) ? squareRoot : threeSecondsRoot;
-        List<int> result = [N];
-        result.addAll(sequence(next));
+        result.addAll(sequence(next(N)));
         return result;
+    }
+
+    int next(int N) {
+        int squareRoot = sqrt(N).floor();
+        int threeHalvesRoot = pow(N, 3/2).floor();
+
+        return (N % 2 == 0) ? squareRoot : threeHalvesRoot;
     }
 }
 
