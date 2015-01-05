@@ -38,7 +38,13 @@ void main() {
       });
 
       test('concrete examples', () {
+          expect([3, 5, 11, 36, 6, 2, 1], juggler.sequence(3));
           expect([4, 2, 1], juggler.sequence(4));
+          expect([5, 11, 36, 6, 2, 1], juggler.sequence(5));
+          expect([6, 2, 1], juggler.sequence(6));
+          expect([7, 18, 4, 2, 1], juggler.sequence(7));
+          expect([8, 2, 1], juggler.sequence(8));
+          expect([9, 27, 140, 11, 36, 6, 2, 1], juggler.sequence(9));
       });
 
   });
