@@ -32,6 +32,11 @@ void main() {
           expect(96, juggler.sequence(21)[1]);
       });
 
+      test('has more than 2 elements for numbers greater than 2', () {
+          expect(true, juggler.sequence(3).length > 2);
+          expect(true, juggler.sequence(4).length > 2);
+      });
+
   });
 }
 
@@ -41,13 +46,17 @@ class Juggler {
             return [];
         }
 
+        if (N == 1) {
+            return [1];
+        }
+
         int squareRoot = sqrt(N).floor();
         int threeSecondsRoot = pow(N, 3/2).floor();
 
-        if (N % 2 == 0) {
-            return [N, squareRoot];
-        }
-        return [N, threeSecondsRoot];
+        int next = (N % 2 == 0) ? squareRoot : threeSecondsRoot;
+        List<int> result = [N];
+        result.addAll(sequence(next));
+        return result;
     }
 }
 
