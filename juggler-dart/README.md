@@ -15,5 +15,5 @@ To run tests from command line:
 
 To run tests from Dart editor:
 
-- right click on `bin/juggler.dart' file, and choose Run
+- right click on `bin/juggler.dart` file, and choose Run
 
