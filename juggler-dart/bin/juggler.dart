@@ -28,6 +28,10 @@ void main() {
           expect(27, juggler.sequence(9)[1]);
       });
 
+      test('returns the floor of N^3/2 when it is not an integer', () {
+          expect(96, juggler.sequence(21)[1]);
+      });
+
   });
 }
 
@@ -38,7 +42,7 @@ class Juggler {
         }
 
         int squareRoot = sqrt(N).floor();
-        int threeSecondsRoot = pow(N, 3/2);
+        int threeSecondsRoot = pow(N, 3/2).floor();
 
         if (N % 2 == 0) {
             return [N, squareRoot];
