@@ -13,6 +13,11 @@ void main() {
                 expect(1, happy.digits(9).length);
             });
 
+            test('returns the same number if it is below 10', () {
+                HappyNumbers happy = new HappyNumbers();
+                expect([2], happy.digits(2));
+            });
+
         });
 
     });
