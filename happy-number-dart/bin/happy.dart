@@ -2,11 +2,16 @@ import 'package:unittest/unittest.dart';
 import 'dart:math';
 
 void main() {
-    group('hookup test', () {
+    group('Happy numbers', () {
 
-        test('hookup', () {
-            expect(4, 2 + 2);
+        group('#digits', () {
+
+            test('splits a number below 10 in an list with one element', () {
+                HappyNumbers happy = new HappyNumbers();
+                expect(1, happy.digits(1).length);
+            });
         });
+
     });
 }
 
