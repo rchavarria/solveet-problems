@@ -20,6 +20,8 @@ void main() {
 
             test('splits a number between 10 and 99 in a list with two elements', () {
                 expect(2, happy.digits(10).length);
+                expect(2, happy.digits(35).length);
+                expect(2, happy.digits(99).length);
             });
         });
 
