@@ -18,6 +18,9 @@ void main() {
                 expect([2], happy.digits(2));
             });
 
+            test('splits a number between 10 and 99 in a list with two elements', () {
+                expect(2, happy.digits(10).length);
+            });
         });
 
     });
@@ -25,6 +28,10 @@ void main() {
 
 class HappyNumbers {
     List<int> digits(number) {
+        if (number > 9) {
+            return [number, number];
+        }
+
         return [number];
     }
 }
