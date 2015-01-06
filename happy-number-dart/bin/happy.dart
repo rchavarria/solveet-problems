@@ -30,6 +30,12 @@ void main() {
                 expect([9, 9], happy.digits(99));
             });
 
+            test('splits numbers with all its digits', () {
+                expect([1, 0, 0], happy.digits(100));
+                expect([2, 5, 7], happy.digits(257));
+                expect([1, 2, 3, 4, 5], happy.digits(12345));
+            });
+
         });
 
     });
