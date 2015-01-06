@@ -23,6 +23,13 @@ void main() {
                 expect(2, happy.digits(35).length);
                 expect(2, happy.digits(99).length);
             });
+
+            test('returns tenths and units in a number so that 9 < x < 99', () {
+                expect([1, 0], happy.digits(10));
+                expect([3, 5], happy.digits(35));
+                expect([9, 9], happy.digits(99));
+            });
+
         });
 
     });
