@@ -38,6 +38,13 @@ void main() {
 
         });
 
+
+        group('#squareSums', () {
+        });
+
+        group('#isHappy', () {
+        });
+
     });
 }
 
