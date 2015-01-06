@@ -38,7 +38,7 @@ void main() {
 class HappyNumbers {
     List<int> digits(number) {
         if (number > 9) {
-            return [number, number];
+            return [number ~/ 10, number % 10];
         }
 
         return [number];
