@@ -43,10 +43,13 @@ void main() {
 
 class HappyNumbers {
     List<int> digits(number) {
-        if (number > 9) {
-            return [number ~/ 10, number % 10];
+        List<int> allDigits = new List<int>();
+
+        while(number > 0) {
+            allDigits.insert(0, number % 10);
+            number = number ~/ 10;
         }
 
-        return [number];
+        return allDigits;
     }
 }
