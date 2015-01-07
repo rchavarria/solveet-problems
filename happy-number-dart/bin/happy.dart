@@ -44,10 +44,10 @@ void main() {
             HappyNumbers happy = new HappyNumbers();
 
             test('sums the squares of all numbers in an array', () {
-                expect(1, happy.squareSums([1]);
-                expect(4, happy.squareSums([2]);
-                expect(25, happy.squareSums([3, 4]);
-                expect(55, happy.squareSums([1, 2, 3, 4, 5]);
+                expect(1, happy.squareSums([1]));
+                expect(4, happy.squareSums([2]));
+                expect(25, happy.squareSums([3, 4]));
+                expect(55, happy.squareSums([1, 2, 3, 4, 5]));
             });
 
         });
