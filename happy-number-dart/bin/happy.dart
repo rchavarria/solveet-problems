@@ -92,7 +92,11 @@ class HappyNumbers {
 
 
     boolean isHappy(int number) {
-        return false;
+        if (maximumNumberOfIterations < 0) {
+            return false;
+        }
+
+        return true;
     }
 
 }
