@@ -52,9 +52,14 @@ void main() {
 
         group('#isHappy', () {
 
-            test('returns false if maximum number of iterations is reached', () {
+            test('returns false if maximum number of configured iterations is reached', () {
                 HappyNumbers happy = new HappyNumbers(maxIterations: -1);
                 expect(false, happy.isHappy(1));
+            });
+
+            test('returns false if maximum number of default iterations (20) is reached', () {
+                HappyNumbers happy = new HappyNumbers();
+                expect(false, happy.isHappy(2));
             });
 
             test('returns true for number 1', () {
