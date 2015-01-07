@@ -63,6 +63,11 @@ void main() {
 
 class HappyNumbers {
 
+    int maximumNumberOfIterations;
+
+    HappyNumbers ({int maxIterations: 20}) {
+        maximumNumberOfIterations = maxIterations;
+    }
 
     List<int> digits(number) {
         List<int> allDigits = new List<int>();
@@ -79,6 +84,11 @@ class HappyNumbers {
         return digits
             .map((n) => n * n)
             .reduce((sum, n) => sum + n);
+    }
+
+
+    boolean isHappy(int number) {
+        return false;
     }
 
 }
