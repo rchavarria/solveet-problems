@@ -60,6 +60,10 @@ void main() {
             test('returns true for number 1', () {
                 expect(true, happy.isHappy(1));
             });
+
+            test('returns true for number 7', () {
+                expect(true, happy.isHappy(7));
+            });
         });
 
     });
