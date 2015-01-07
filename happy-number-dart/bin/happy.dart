@@ -2,9 +2,9 @@ import 'package:unittest/unittest.dart';
 import 'dart:math';
 
 void main() {
-    group('Happy numbers', () {
+    HappyNumbers happy = new HappyNumbers();
 
-        HappyNumbers happy = new HappyNumbers();
+    group('Happy numbers', () {
 
         group('#digits', () {
 
@@ -40,8 +40,6 @@ void main() {
 
 
         group('#squareSums', () {
-
-            HappyNumbers happy = new HappyNumbers();
 
             test('sums the squares of all numbers in an array', () {
                 expect(1, happy.squareSums([1]));
