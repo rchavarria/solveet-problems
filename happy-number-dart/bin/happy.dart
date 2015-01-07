@@ -80,7 +80,7 @@ class HappyNumbers {
         return allDigits;
     }
 
-    int squareSums(List<int> digits) {
+    int squareSums(digits) {
         return digits
             .map((n) => n * n)
             .reduce((sum, n) => sum + n);
