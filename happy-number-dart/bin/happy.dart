@@ -69,4 +69,10 @@ class HappyNumbers {
 
         return allDigits;
     }
+
+    int squareSums(List<int> digits) {
+        return digits
+            .map((n) => n * n)
+            .reduce((sum, n) => sum + n);
+    }
 }
