@@ -51,12 +51,19 @@ void main() {
         });
 
         group('#isHappy', () {
+
+            test('returns false if maximum number of iterations is reached', () {
+                HappyNumbers happy = new HappyNumbers(maxIterations: -1);
+                expect(false, happy.isHappy(1));
+            });
         });
 
     });
 }
 
 class HappyNumbers {
+
+
     List<int> digits(number) {
         List<int> allDigits = new List<int>();
 
@@ -73,4 +80,5 @@ class HappyNumbers {
             .map((n) => n * n)
             .reduce((sum, n) => sum + n);
     }
+
 }
