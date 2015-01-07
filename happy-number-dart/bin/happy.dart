@@ -100,7 +100,12 @@ class HappyNumbers {
             return false;
         }
 
-        return true;
+        int next = squareSums(digits(number));
+        if (next == 1) {
+            return true;
+        }
+
+        return isHappy(next);
     }
 
 }
