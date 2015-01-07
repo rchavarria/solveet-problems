@@ -56,6 +56,10 @@ void main() {
                 HappyNumbers happy = new HappyNumbers(maxIterations: -1);
                 expect(false, happy.isHappy(1));
             });
+
+            test('returns true for number 1', () {
+                expect(true, happy.isHappy(1));
+            });
         });
 
     });
