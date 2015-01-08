@@ -71,6 +71,11 @@ void main() {
                 expect(true, happy.isHappy(10));
             });
 
+            test('returns false for sad numbers', () {
+                expect(false, happy.isHappy(2));
+                expect(false, happy.isHappy(5));
+            });
+
         });
 
     });
