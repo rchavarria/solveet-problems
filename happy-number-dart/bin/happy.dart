@@ -68,6 +68,7 @@ void main() {
 
             test('returns true for happy numbers', () {
                 expect(true, happy.isHappy(7));
+                expect(true, happy.isHappy(10));
             });
 
         });
