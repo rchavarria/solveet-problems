@@ -53,7 +53,7 @@ void main() {
         group('#isHappy', () {
 
             test('returns false if maximum number of configured iterations is reached', () {
-                HappyNumbers happy = new HappyNumbers(maxIterations: -1);
+                HappyNumbers happy = new HappyNumbers(maximumIterationsAllowed: -1);
                 expect(false, happy.isHappy(1));
             });
 
@@ -93,8 +93,8 @@ class HappyNumbers {
 
     int maximumNumberOfIterations;
 
-    HappyNumbers ({int maxIterations: 20}) {
-        maximumNumberOfIterations = maxIterations;
+    HappyNumbers ({int maximumIterationsAllowed: 20}) {
+        maximumNumberOfIterations = maximumIterationsAllowed;
     }
 
     List<int> digits(number) {
