@@ -97,7 +97,7 @@ void main() {
                 bool isHappy = happy.isHappy(i);
                 if (!isHappy) continue;
 
-                print('${i} is happy: ${isHappy}');
+                print('${i} is happy');
             }
         });
     });
