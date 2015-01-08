@@ -66,9 +66,10 @@ void main() {
                 expect(true, happy.isHappy(1));
             });
 
-            test('returns true for number 7', () {
+            test('returns true for happy numbers', () {
                 expect(true, happy.isHappy(7));
             });
+
         });
 
     });
@@ -99,9 +100,8 @@ class HappyNumbers {
             .reduce((sum, n) => sum + n);
     }
 
-
-    boolean isHappy(int number) {
-        if (maximumNumberOfIterations < 0) {
+    boolean isHappy(int number, {iteration: 0}) {
+        if (maximumNumberOfIterations < iteration) {
             return false;
         }
 
@@ -110,7 +110,7 @@ class HappyNumbers {
             return true;
         }
 
-        return isHappy(next);
+        return isHappy(next, iteration: iteration + 1);
     }
 
 }
