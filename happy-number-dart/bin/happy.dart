@@ -114,7 +114,7 @@ class HappyNumbers {
             .reduce((sum, n) => sum + n);
     }
 
-    boolean isHappy(int number, {iteration: 0}) {
+    boolean isHappy(int number, {int iteration: 0}) {
         if (maximumNumberOfIterations < iteration) {
             return false;
         }
