@@ -78,6 +78,14 @@ void main() {
 
         });
 
+        test('results from 1 to 100', () {
+            for(int i = 1; i <= 100; i++) {
+                bool isHappy = happy.isHappy(i);
+                if (!isHappy) continue;
+
+                print('${i} is happy: ${isHappy}');
+            }
+        });
     });
 }
 
