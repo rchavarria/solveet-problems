@@ -111,6 +111,19 @@ class HappyNumbers {
         maximumNumberOfIterations = maximumIterationsAllowed;
     }
 
+    boolean isHappy(int number, {int iteration: 0}) {
+        if (maximumNumberOfIterations < iteration) {
+            return false;
+        }
+
+        int next = squareSums(digits(number));
+        if (next == 1) {
+            return true;
+        }
+
+        return isHappy(next, iteration: iteration + 1);
+    }
+
     List<int> digits(number) {
         List<int> allDigits = new List<int>();
 
@@ -126,19 +139,6 @@ class HappyNumbers {
         return digits
             .map((n) => n * n)
             .reduce((sum, n) => sum + n);
-    }
-
-    boolean isHappy(int number, {int iteration: 0}) {
-        if (maximumNumberOfIterations < iteration) {
-            return false;
-        }
-
-        int next = squareSums(digits(number));
-        if (next == 1) {
-            return true;
-        }
-
-        return isHappy(next, iteration: iteration + 1);
     }
 
 }
