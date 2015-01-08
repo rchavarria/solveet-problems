@@ -38,7 +38,6 @@ void main() {
 
         });
 
-
         group('#squareSums', () {
 
             test('sums the squares of all numbers in an array', () {
@@ -58,7 +57,6 @@ void main() {
             });
 
             test('returns false if maximum number of default iterations (20) is reached', () {
-                HappyNumbers happy = new HappyNumbers();
                 expect(false, happy.isHappy(2));
             });
 
