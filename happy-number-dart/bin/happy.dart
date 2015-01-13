@@ -2,9 +2,9 @@ import 'package:unittest/unittest.dart';
 import 'dart:math';
 
 void main() {
-    group('Happy numbers', () {
+    HappyNumbers happy = new HappyNumbers();
 
-        HappyNumbers happy = new HappyNumbers();
+    group('Happy numbers', () {
 
         group('#digits', () {
 
@@ -38,17 +38,92 @@ void main() {
 
         });
 
-
         group('#squareSums', () {
+
+            test('sums the squares of all numbers in an array', () {
+                expect(1, happy.squareSums([1]));
+                expect(4, happy.squareSums([2]));
+                expect(25, happy.squareSums([3, 4]));
+                expect(55, happy.squareSums([1, 2, 3, 4, 5]));
+            });
+
         });
 
         group('#isHappy', () {
+
+            test('returns false if maximum number of configured iterations is reached', () {
+                HappyNumbers happy = new HappyNumbers(maximumIterationsAllowed: -1);
+                expect(false, happy.isHappy(1));
+            });
+
+            test('returns false if maximum number of default iterations (20) is reached', () {
+                expect(false, happy.isHappy(2));
+            });
+
+            test('returns true for number 1', () {
+                expect(true, happy.isHappy(1));
+            });
+
+            test('returns true for happy numbers', () {
+                expect(true, happy.isHappy(7));
+                expect(true, happy.isHappy(10));
+                expect(true, happy.isHappy(13));
+                expect(true, happy.isHappy(19));
+                expect(true, happy.isHappy(23));
+                expect(true, happy.isHappy(28));
+                expect(true, happy.isHappy(31));
+                expect(true, happy.isHappy(32));
+                expect(true, happy.isHappy(44));
+                expect(true, happy.isHappy(49));
+                expect(true, happy.isHappy(68));
+                expect(true, happy.isHappy(70));
+                expect(true, happy.isHappy(79));
+                expect(true, happy.isHappy(82));
+                expect(true, happy.isHappy(91));
+                expect(true, happy.isHappy(94));
+                expect(true, happy.isHappy(97));
+                expect(true, happy.isHappy(100));
+            });
+
+            test('returns false for sad numbers', () {
+                expect(false, happy.isHappy(2));
+                expect(false, happy.isHappy(5));
+            });
+
         });
 
+        test('results from 1 to 100', () {
+            for(int i = 1; i <= 100; i++) {
+                bool isHappy = happy.isHappy(i);
+                if (!isHappy) continue;
+
+                print('${i} is happy');
+            }
+        });
     });
 }
 
 class HappyNumbers {
+
+    int maximumNumberOfIterations;
+
+    HappyNumbers ({int maximumIterationsAllowed: 20}) {
+        maximumNumberOfIterations = maximumIterationsAllowed;
+    }
+
+    boolean isHappy(int number, {int iteration: 0}) {
+        if (maximumNumberOfIterations < iteration) {
+            return false;
+        }
+
+        int next = squareSums(digits(number));
+        if (next == 1) {
+            return true;
+        }
+
+        return isHappy(next, iteration: iteration + 1);
+    }
+
     List<int> digits(number) {
         List<int> allDigits = new List<int>();
 
@@ -59,4 +134,11 @@ class HappyNumbers {
 
         return allDigits;
     }
+
+    int squareSums(digits) {
+        return digits
+            .map((n) => n * n)
+            .reduce((sum, n) => sum + n);
+    }
+
 }
