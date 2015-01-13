@@ -1,4 +1,7 @@
 import 'package:unittest/unittest.dart';
+
+// package http can be used to get remote content from the server
+// documentation: https://pub.dartlang.org/packages/http
 import 'package:http/http.dart' as http;
 
 void main() {
