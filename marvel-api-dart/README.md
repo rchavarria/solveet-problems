@@ -1,17 +1,21 @@
-Marvel API
-==========
+# Marvel API
 
 Solution to the solveet.com problem: 
 [Marvel API](http://www.solveet.com/exercises/Acceder-a-la-API-Marvel/299)
 
-Requirements:
+## Requirements
 
 - [Dart SDK](https://www.dartlang.org) needs to be installed
 - [Dart editor](https://www.dartlang.org) can be installed
 
-To run tests from command line:
+## Running the tests
 
-- Be sure Dart SDK is in the PATH. Run `dart bin/marvel.dart`
+First, you must be sure you have all dependencies. Run command `pub get`.
+Or from Dart Editor, select the project, go to menu Tools > Pub get.
+
+To run the tests from command line:
+
+    dart bin/marvel.dart
 
 To run tests from Dart editor:
 
