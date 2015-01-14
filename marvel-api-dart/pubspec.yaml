@@ -1,7 +1,8 @@
 name: marvel_api
 author: rchavarria
-description: A program writen in Dart that allows you to consume the Marvel API
+description: A program writen in Dart that allows you to consume the Marvel API (http://developer.marvel.com/docs#!/public/getCreatorCollectionget0)
 homepage: http://rchavarria.github.io
 dev_dependencies:
     unittest: '>=0.10.0'
     http: ">=0.11.0 <0.12.0"
+    cipher: ">=0.7.1 <0.8.0"
