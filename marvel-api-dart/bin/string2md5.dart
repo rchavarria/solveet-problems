@@ -6,9 +6,9 @@ import 'dart:convert';
 
 void main() {
 
-    group('MD5 spike', () {
+    group('MD5 Spike:', () {
 
-        test('calculating an MD5 digest with cipher package', () {
+        test('calculates a MD5 digest with `cipher` package', () {
             initCipher();
 
             String inputString = 'compute md5 of this';
