@@ -3,6 +3,8 @@ import 'package:unittest/unittest.dart';
 // documentation: https://pub.dartlang.org/packages/http
 import 'package:http/http.dart' as http;
 
+import 'read_key_file.dart';
+
 void main() {
 
     group('HTTP Requests Spike:', () {
@@ -15,6 +17,19 @@ void main() {
                 .then((response) {
                     print(response.statusCode);
                 });
+        });
+
+    });
+
+    group('API login Spike:', () {
+
+        test('performs the first request and gets authenticated', () {
+            // reading keys
+            var reader = new KeyFileReader('.env');
+            reader.read();
+
+            print('Private Key: ${reader.privateKey}');
+            print('Public Key: ${reader.publicKey}');
         });
 
     });
