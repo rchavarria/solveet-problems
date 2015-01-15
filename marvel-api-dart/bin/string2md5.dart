@@ -35,6 +35,12 @@ void main() {
                 expect(md5Result.length, 32);
             });
 
+            test('computes the MD5 of a String', () {
+                var md5 = new Utf8String2MD5();
+                var md5Result = md5.digest('compute md5 of this');
+                expect(md5Result, '3938ec6a9dd52a066e79d93bfdd7e498');
+            });
+
         });
 
     });
@@ -53,7 +59,14 @@ class Utf8String2MD5 {
     }
 
     String digest(String message) {
-        return '12345678901234567890123456789012';
+        List<int> utf8Data = encoder.convert(message);
+        Utf8List inputData = new Uint8List.fromList(utf8Data);
+        Uint8List digestValue = md5Digest.process(inputData);
+
+        return digestValue
+            .map((i) => i.toRadixString(16))
+            .map((s) => s.padLeft(2, '0'))
+            .join();
     }
 
 }
