@@ -6,7 +6,7 @@ import 'dart:convert';
 
 void main() {
 
-    group('Utf8String2MD5', () {
+    group('MD5 spike', () {
 
         test('calculating an MD5 digest with cipher package', () {
             initCipher();
@@ -26,6 +26,10 @@ void main() {
             });
             print('Digest value is: ${output}');
         });
+
+    });
+
+    group('Utf8String2MD5', () {
 
         group('#digest', () {
 
