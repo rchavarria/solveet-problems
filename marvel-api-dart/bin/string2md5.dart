@@ -64,9 +64,9 @@ class Utf8String2MD5 {
         Uint8List digestValue = md5Digest.process(inputData);
 
         return digestValue
-            .map((i) => i.toRadixString(16))
-            .map((s) => s.padLeft(2, '0'))
-            .join();
+            .map((i) => i.toRadixString(16)) // converts to hexadecimal string
+            .map((s) => s.padLeft(2, '0')) // pad strings with 0
+            .join(); // join all elements in the List to build a String
     }
 
 }
