@@ -8,6 +8,15 @@ Solution to the solveet.com problem:
 - [Dart SDK](https://www.dartlang.org) needs to be installed
 - [Dart editor](https://www.dartlang.org) can be installed
 
+## Configuration
+
+You have to get a private and public key to access the Marvel API. Then,
+store them in a file called `.env` in the root directory, that should
+have the following format:
+
+    privateKey=<your private key here>
+    publicKey=<your public key here>
+
 ## Running the tests
 
 First, you must be sure you have all dependencies. Run command `pub get`.
