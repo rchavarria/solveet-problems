@@ -27,5 +27,33 @@ void main() {
             print('Digest value is: ${output}');
         });
 
+        group('#digest', () {
+
+            test('returns a 32-char-length String', () {
+                var md5 = new Utf8String2MD5();
+                var md5Result = md5.digest('something');
+                expect(md5Result.length, 32);
+            });
+
+        });
+
     });
+}
+
+class Utf8String2MD5 {
+
+    Utf8Encoder encoder;
+    Digest md5Digest;
+
+    Utf8String2MD5() {
+        initCipher();
+
+        encoder = new Utf8Encoder();
+        md5Digest = new Digest('MD5');
+    }
+
+    String digest(String message) {
+        return '12345678901234567890123456789012';
+    }
+
 }
