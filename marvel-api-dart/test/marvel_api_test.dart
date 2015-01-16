@@ -103,6 +103,18 @@ void main() {
                     .then(asyncExpectation);
             });
 
+            test('each comic has "title" as property', () {
+                var asyncExpectation = expectAsync((comics) {
+                    var comic = comics[0];
+                    expect(comic.title, isNot(isEmpty));
+                });
+
+                var api = buildMarvelApi();
+                api.authenticate()
+                    .then((_) => api.comics())
+                    .then(asyncExpectation);
+            });
+
         });
 
         group('#characters', () {

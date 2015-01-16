@@ -28,8 +28,13 @@ class MarvelApi {
     Future comics() {
         return makeApiRequest('comics')
             .then((response) {
-                var result = JSON.decode(response.body);
-                var comics = result['data']['results'];
+                var body = JSON.decode(response.body);
+                var results = body['data']['results'];
+                var comics = results.map((c) {
+                    var comic = new Comic();
+                    comic.title = c['title'];
+                    return comic;
+                }).toList();
 
                 return new Future.value(comics);
             });
@@ -63,3 +68,6 @@ class MarvelApi {
 
 }
 
+class Comic {
+    String title;
+}
