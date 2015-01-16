@@ -28,10 +28,8 @@ class MarvelApi {
     }
 
     Future comics() {
-        return makeApiRequest('comics')
-            .then((response) {
-                var body = JSON.decode(response.body);
-                var results = body['data']['results'];
+        return extractResultsFromRequest('comics')
+            .then((results) {
                 var comics = results
                     .map((c) => new Comic.fromJson(c))
                     .toList();
@@ -41,10 +39,8 @@ class MarvelApi {
     }
 
     Future characters() {
-        return makeApiRequest('characters')
-            .then((response) {
-                var body = JSON.decode(response.body);
-                var results = body['data']['results'];
+        return extractResultsFromRequest('characters')
+            .then((results) {
                 var characters = results
                     .map((c) => new Character.fromJson(c))
                     .toList();
@@ -67,6 +63,15 @@ class MarvelApi {
         String url = '${baseEndpoint}/v1/public/${entity}?${query}';
 
         return http.get(url);
+    }
+
+    Future extractResultsFromRequest(entity) {
+        return makeApiRequest(entity)
+            .then((response) {
+                var body = JSON.decode(response.body);
+                var results = body['data']['results'];
+                return new Future.value(results);
+            });
     }
 
 }
