@@ -25,6 +25,16 @@ class MarvelApi {
             });
     }
 
+    Future comics() {
+        return makeApiRequest('comics')
+            .then((response) {
+                var result = JSON.decode(response.body);
+                var comics = result['data'];
+
+                return new Future.value(comics);
+            });
+    }
+
     Future makeApiRequest(entity) {
         timestamp += 1;
         var authenticationToken = timestamp.toString() + privateKey + publicKey;
@@ -39,16 +49,6 @@ class MarvelApi {
         String url = '${baseEndpoint}/v1/public/${entity}?${query}';
 
         return http.get(url);
-    }
-
-    Future comics() {
-        return makeApiRequest('comics')
-            .then((response) {
-                var result = JSON.decode(response.body);
-                var comics = result['data'];
-
-                return new Future.value(comics);
-            });
     }
 
 }
