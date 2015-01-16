@@ -105,6 +105,21 @@ void main() {
 
         });
 
+        group('#characters', () {
+
+            test('retrieves all comics from marvel', () {
+                var asyncExpectation = expectAsync((characters) {
+                    expect(characters.length, equals(20));
+                });
+
+                var api = buildMarvelApi();
+                api.authenticate()
+                    .then((_) => api.characters())
+                    .then(asyncExpectation);
+            });
+
+        });
+
     });
 
 }

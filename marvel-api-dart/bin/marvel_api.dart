@@ -35,6 +35,16 @@ class MarvelApi {
             });
     }
 
+    Future characters() {
+        return makeApiRequest('characters')
+            .then((response) {
+                var result = JSON.decode(response.body);
+                var characters = result['data']['results'];
+
+                return new Future.value(characters);
+            });
+    }
+
     Future makeApiRequest(entity) {
         timestamp += 1;
         var authenticationToken = timestamp.toString() + privateKey + publicKey;
