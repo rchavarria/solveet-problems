@@ -79,8 +79,9 @@ void main() {
             var asyncExpectation = expectAsync((authenticated) {
                 expect(authenticated, equals(true));
             });
-            var api = buildMarvelApi();
-            api.authenticate()
+
+            buildMarvelApi()
+                .authenticate()
                 .then(asyncExpectation);
         });
 
@@ -125,4 +126,5 @@ class MarvelApi {
                 return new Future.value(success);
             });
     }
+
 }
