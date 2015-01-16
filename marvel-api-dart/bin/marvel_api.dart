@@ -33,6 +33,8 @@ class MarvelApi {
                 var comics = results.map((c) {
                     var comic = new Comic();
                     comic.title = c['title'];
+                    comic.description = c['description'];
+                    comic.thumbnailUrl = c['thumbnail']['path'];
                     return comic;
                 }).toList();
 
@@ -70,4 +72,7 @@ class MarvelApi {
 
 class Comic {
     String title;
+    String description;
+    String thumbnailUrl;
 }
+

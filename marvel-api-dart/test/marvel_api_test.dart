@@ -103,10 +103,12 @@ void main() {
                     .then(asyncExpectation);
             });
 
-            test('each comic has "title" as property', () {
+            test('each comic has title, description and thumbnailUrl as properties', () {
                 var asyncExpectation = expectAsync((comics) {
                     var comic = comics[0];
                     expect(comic.title, isNot(isEmpty));
+                    expect(comic.description, isNot(isEmpty));
+                    expect(comic.thumbnailUrl, isNot(isEmpty));
                 });
 
                 var api = buildMarvelApi();
