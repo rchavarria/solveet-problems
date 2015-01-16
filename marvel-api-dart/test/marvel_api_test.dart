@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:async';
 
 import 'package:unittest/unittest.dart';
 // package http can be used to get remote content from the server
@@ -75,11 +76,12 @@ void main() {
         });
 
         test('authenticates against marvel endpoint', () {
+            var asyncExpectation = expectAsync((authenticated) {
+                expect(authenticated, equals(true));
+            });
             var api = buildMarvelApi();
             api.authenticate()
-                .then((authenticated) {
-                    expect(true, authenticated);
-                });
+                .then(asyncExpectation);
         });
 
     });
