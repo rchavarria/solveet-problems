@@ -68,4 +68,31 @@ void main() {
 
     });
 
+    group('Marvel API:', () {
+
+        test('constructor accepts 3 params: md5 digester, private key and public key', () {
+            var api = buildMarvelApi();
+        });
+
+    });
+
+}
+
+MarvelApi buildMarvelApi() {
+    var reader = new KeyFileReader('.env');
+    reader.read();
+
+    var md5 = new Utf8String2MD5();
+
+    var api = new MarvelApi(md5, reader.privateKey, reader.publicKey);
+}
+
+class MarvelApi {
+
+    Utf8String2MD5 md5;
+    String privateKey;
+    String publicKey;
+
+    MarvelApi(this.md5, this.privateKey, this.publicKey);
+
 }
