@@ -30,13 +30,7 @@ class MarvelApi {
             .then((response) {
                 var body = JSON.decode(response.body);
                 var results = body['data']['results'];
-                var comics = results.map((c) {
-                    var comic = new Comic();
-                    comic.title = c['title'];
-                    comic.description = c['description'];
-                    comic.thumbnailUrl = c['thumbnail']['path'];
-                    return comic;
-                }).toList();
+                var comics = results.map((c) => new Comic.fromJson(c)).toList();
 
                 return new Future.value(comics);
             });
@@ -74,5 +68,12 @@ class Comic {
     String title;
     String description;
     String thumbnailUrl;
+
+    Comic.fromJson(Map json) {
+        title = json['title'];
+        description = json['description'];
+        thumbnailUrl = json['thumbnail']['path'];
+    }
+
 }
 
