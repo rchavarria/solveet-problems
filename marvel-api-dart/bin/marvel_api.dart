@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'read_key_file.dart';
 import 'string2md5.dart';
 import 'comic.dart';
+import 'character.dart';
 
 class MarvelApi {
 
@@ -42,8 +43,11 @@ class MarvelApi {
     Future characters() {
         return makeApiRequest('characters')
             .then((response) {
-                var result = JSON.decode(response.body);
-                var characters = result['data']['results'];
+                var body = JSON.decode(response.body);
+                var results = body['data']['results'];
+                var characters = results
+                    .map((c) => new Character.fromJson(c))
+                    .toList();
 
                 return new Future.value(characters);
             });

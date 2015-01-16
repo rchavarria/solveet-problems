@@ -132,6 +132,20 @@ void main() {
                     .then(asyncExpectation);
             });
 
+            test('each character has name, description and thumbnailUrl as properties', () {
+                var asyncExpectation = expectAsync((characters) {
+                    var character = characters[0];
+                    expect(character.name, isNot(isEmpty));
+                    expect(character.description, isEmpty);
+                    expect(character.thumbnailUrl, isNot(isEmpty));
+                });
+
+                var api = buildMarvelApi();
+                api.authenticate()
+                    .then((_) => api.characters())
+                    .then(asyncExpectation);
+            });
+
         });
 
     });
