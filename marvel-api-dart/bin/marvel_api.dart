@@ -29,7 +29,7 @@ class MarvelApi {
         return makeApiRequest('comics')
             .then((response) {
                 var result = JSON.decode(response.body);
-                var comics = result['data'];
+                var comics = result['data']['results'];
 
                 return new Future.value(comics);
             });

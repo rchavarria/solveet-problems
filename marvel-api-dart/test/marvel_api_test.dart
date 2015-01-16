@@ -94,7 +94,7 @@ void main() {
 
             test('retrieves all comics from marvel', () {
                 var asyncExpectation = expectAsync((comics) {
-                    expect(comics.length, equals(5));
+                    expect(comics.length, equals(20));
                 });
 
                 var api = buildMarvelApi();
