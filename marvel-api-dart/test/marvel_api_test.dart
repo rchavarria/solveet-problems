@@ -41,6 +41,20 @@ void main() {
 
             print('apikey = ${apikey}');
             print('hash: ${hash}');
+
+            // making the first api call to authenticate
+            String baseEndpoint = 'http://gateway.marvel.com';
+            String query = [
+                'ts=${timestamp}',
+                'apikey=${reader.publicKey}',
+                'hash=${hash}'
+                    ].join('&');
+            String url = '${baseEndpoint}/v1/public/comics?${query}';
+            print('URL: ${url}');
+            http.get(url)
+                .then((response) {
+                    print('Real api call: ${response.statusCode}');
+                });
         });
 
     });
