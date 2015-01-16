@@ -3,7 +3,8 @@ import 'package:unittest/unittest.dart';
 // documentation: https://pub.dartlang.org/packages/http
 import 'package:http/http.dart' as http;
 
-import 'read_key_file.dart';
+import '../bin/read_key_file.dart';
+import '../bin/string2md5.dart';
 
 void main() {
 
@@ -28,8 +29,18 @@ void main() {
             var reader = new KeyFileReader('.env');
             reader.read();
 
+            print('Keys have been read');
             print('Private Key: ${reader.privateKey}');
             print('Public Key: ${reader.publicKey}');
+
+            // generating hash = md5(timestamp + keys)
+            var timestamp = 1;
+            var digest = new Utf8String2MD5();
+            var apikey = timestamp.toString() + reader.privateKey + reader.publicKey;
+            var hash = digest.digest(apikey);
+
+            print('apikey = ${apikey}');
+            print('hash: ${hash}');
         });
 
     });
