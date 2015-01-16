@@ -36,7 +36,7 @@ void main() {
             print('Public Key: ${reader.publicKey}');
 
             // generating hash = md5(timestamp + keys)
-            var timestamp = 1;
+            var timestamp = new DateTime.now().millisecondsSinceEpoch;
             var digest = new Utf8String2MD5();
             var apikey = timestamp.toString() + reader.privateKey + reader.publicKey;
             var hash = digest.digest(apikey);
@@ -74,17 +74,24 @@ void main() {
             var api = buildMarvelApi();
         });
 
+        test('authenticates against marvel endpoint', () {
+            var api = buildMarvelApi();
+            api.authenticate()
+                .then((authenticated) {
+                    expect(true, authenticated);
+                });
+        });
+
     });
 
 }
 
 MarvelApi buildMarvelApi() {
+    var md5 = new Utf8String2MD5();
     var reader = new KeyFileReader('.env');
     reader.read();
 
-    var md5 = new Utf8String2MD5();
-
-    var api = new MarvelApi(md5, reader.privateKey, reader.publicKey);
+    return new MarvelApi(md5, reader.privateKey, reader.publicKey);
 }
 
 class MarvelApi {
@@ -92,7 +99,28 @@ class MarvelApi {
     Utf8String2MD5 md5;
     String privateKey;
     String publicKey;
+    int timestamp;
 
-    MarvelApi(this.md5, this.privateKey, this.publicKey);
+    MarvelApi(this.md5, this.privateKey, this.publicKey) {
+        timestamp = new DateTime.now().millisecondsSinceEpoch;
+    }
 
+    Future authenticate() {
+        var authenticationToken = timestamp.toString() + privateKey + publicKey;
+        var hash = md5.digest(authenticationToken);
+
+        // making the first api call to authenticate
+        String baseEndpoint = 'http://gateway.marvel.com';
+        String query = [
+            'ts=${timestamp}',
+            'apikey=${publicKey}',
+            'hash=${hash}'].join('&');
+        String url = '${baseEndpoint}/v1/public/comics?${query}';
+
+        return http.get(url)
+            .then((response) {
+                var success = response.statusCode == 200;
+                return new Future.value(success);
+            });
+    }
 }
