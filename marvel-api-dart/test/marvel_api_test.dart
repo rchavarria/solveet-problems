@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 
 import '../bin/read_key_file.dart';
 import '../bin/string2md5.dart';
+import '../bin/marvel_api.dart';
 
 void main() {
 
@@ -97,34 +98,3 @@ MarvelApi buildMarvelApi() {
     return new MarvelApi(md5, reader.privateKey, reader.publicKey);
 }
 
-class MarvelApi {
-
-    Utf8String2MD5 md5;
-    String privateKey;
-    String publicKey;
-    int timestamp;
-
-    MarvelApi(this.md5, this.privateKey, this.publicKey) {
-        timestamp = new DateTime.now().millisecondsSinceEpoch;
-    }
-
-    Future authenticate() {
-        var authenticationToken = timestamp.toString() + privateKey + publicKey;
-        var hash = md5.digest(authenticationToken);
-
-        // making the first api call to authenticate
-        String baseEndpoint = 'http://gateway.marvel.com';
-        String query = [
-            'ts=${timestamp}',
-            'apikey=${publicKey}',
-            'hash=${hash}'].join('&');
-        String url = '${baseEndpoint}/v1/public/comics?${query}';
-
-        return http.get(url)
-            .then((response) {
-                var success = response.statusCode == 200;
-                return new Future.value(success);
-            });
-    }
-
-}
