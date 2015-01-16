@@ -84,8 +84,23 @@ void main() {
                 });
 
                 buildMarvelApi()
-                .authenticate()
-                .then(asyncExpectation);
+                    .authenticate()
+                    .then(asyncExpectation);
+            });
+
+        });
+
+        group('#comics', () {
+
+            test('retrieves all comics from marvel', () {
+                var asyncExpectation = expectAsync((comics) {
+                    expect(comics.length, equals(5));
+                });
+
+                var api = buildMarvelApi();
+                api.authenticate()
+                    .then((_) => api.comics())
+                    .then(asyncExpectation);
             });
 
         });
