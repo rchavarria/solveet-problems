@@ -92,7 +92,7 @@ void main() {
 
         group('#comics', () {
 
-            test('retrieves all comics from marvel', () {
+            test('retrieves first page (20 items) of comics from marvel', () {
                 var asyncExpectation = expectAsync((comics) {
                     expect(comics.length, equals(20));
                 });
@@ -107,7 +107,7 @@ void main() {
 
         group('#characters', () {
 
-            test('retrieves all comics from marvel', () {
+            test('retrieves first page (20 items) of characters from marvel', () {
                 var asyncExpectation = expectAsync((characters) {
                     expect(characters.length, equals(20));
                 });
