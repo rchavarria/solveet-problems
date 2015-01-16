@@ -10,6 +10,9 @@ import 'character.dart';
 
 class MarvelApi {
 
+    static const BASE_ENDPOINT = 'http://gateway.marvel.com';
+    static const API_VERSION = '/v1/public/';
+
     Utf8String2MD5 md5;
     String privateKey;
     String publicKey;
@@ -54,13 +57,11 @@ class MarvelApi {
         var authenticationToken = timestamp.toString() + privateKey + publicKey;
         var hash = md5.digest(authenticationToken);
 
-        // making the first api call to authenticate
-        String baseEndpoint = 'http://gateway.marvel.com';
         String query = [
             'ts=${timestamp}',
             'apikey=${publicKey}',
             'hash=${hash}'].join('&');
-        String url = '${baseEndpoint}/v1/public/${entity}?${query}';
+        String url = '${BASE_ENDPOINT}${API_VERSION}${entity}?${query}';
 
         return http.get(url);
     }
