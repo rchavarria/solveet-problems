@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:unittest/unittest.dart';
 // package http can be used to get remote content from the server
 // documentation: https://pub.dartlang.org/packages/http
@@ -47,14 +49,21 @@ void main() {
             String query = [
                 'ts=${timestamp}',
                 'apikey=${reader.publicKey}',
-                'hash=${hash}'
-                    ].join('&');
+                'hash=${hash}'].join('&');
             String url = '${baseEndpoint}/v1/public/comics?${query}';
             print('URL: ${url}');
             http.get(url)
                 .then((response) {
                     print('Real api call: ${response.statusCode}');
-                });
+
+                    var result = JSON.decode(response.body);
+                    var status = result['status'];
+                    print('Result.status: ${status}');
+
+                    var comics = result['data'];
+                    print('How many comics: ${comics.length}');
+                })
+                .catchError((e) => print(e));
         });
 
     });
