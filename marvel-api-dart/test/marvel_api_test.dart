@@ -76,14 +76,18 @@ void main() {
             var api = buildMarvelApi();
         });
 
-        test('authenticates against marvel endpoint', () {
-            var asyncExpectation = expectAsync((authenticated) {
-                expect(authenticated, equals(true));
-            });
+        group('#authenticate', () {
 
-            buildMarvelApi()
+            test('authenticates against marvel endpoint', () {
+                var asyncExpectation = expectAsync((authenticated) {
+                    expect(authenticated, equals(true));
+                });
+
+                buildMarvelApi()
                 .authenticate()
                 .then(asyncExpectation);
+            });
+
         });
 
     });
