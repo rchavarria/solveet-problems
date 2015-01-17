@@ -162,6 +162,19 @@ void main() {
                     .then(asyncExpectation);
             });
 
+            test('allows search a character by id', () {
+                var asyncExpectation = expectAsync((character) {
+                    expect(character.id, equals(1011334));
+                    expect(character.name, contains('3-D Man'));
+                    expect(character.thumbnailUrl, contains('http://i.annihil.us'));
+                });
+
+                var api = buildMarvelApi();
+                api.authenticate()
+                    .then((_) => api.characterById(1011334))
+                    .then(asyncExpectation);
+            });
+
         });
 
     });
