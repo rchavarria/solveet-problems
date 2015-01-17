@@ -22,14 +22,14 @@ class MarvelApi {
         timestamp = new DateTime.now().millisecondsSinceEpoch;
     }
 
-    Future authenticate() {
+    Future<Boolean> authenticate() {
         return makeApiRequest('comics')
             .then((response) {
                 return response.statusCode == 200;
             });
     }
 
-    Future comics() {
+    Future<List<Comic>> comics() {
         return extractResultsFromRequest('comics')
             .then((results) {
                 var comics = results
@@ -40,7 +40,7 @@ class MarvelApi {
             });
     }
 
-    Future comicById(int id) {
+    Future<Comic> comicById(int id) {
         return extractResultsFromRequest('comics/${id}')
             .then((results) {
                 var comics = results
@@ -51,7 +51,7 @@ class MarvelApi {
             });
     }
 
-    Future characters() {
+    Future<List<Character>> characters() {
         return extractResultsFromRequest('characters')
             .then((results) {
                 var characters = results
