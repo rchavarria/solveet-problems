@@ -118,6 +118,20 @@ void main() {
                     .then(asyncExpectation);
             });
 
+            test('allows search a comic by id', () {
+                var asyncExpectation = expectAsync((comic) {
+                    expect(comic.id, equals(41530));
+                    expect(comic.title, contains('Ant-Man'));
+                    expect(comic.description, contains('Hank Pym'));
+                    expect(comic.thumbnailUrl, contains('http://i.annihil.us'));
+                });
+
+                var api = buildMarvelApi();
+                api.authenticate()
+                    .then((_) => api.comicById(41530))
+                    .then(asyncExpectation);
+            });
+
         });
 
         group('#characters', () {

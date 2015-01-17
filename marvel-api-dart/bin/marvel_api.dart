@@ -41,6 +41,17 @@ class MarvelApi {
             });
     }
 
+    Future comicById(int id) {
+        return extractResultsFromRequest('comics/${id}')
+            .then((results) {
+                var comics = results
+                    .map((c) => new Comic.fromJson(c))
+                    .toList();
+
+                return comics[0];
+            });
+    }
+
     Future characters() {
         return extractResultsFromRequest('characters')
             .then((results) {
