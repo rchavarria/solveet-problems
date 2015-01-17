@@ -25,8 +25,7 @@ class MarvelApi {
     Future authenticate() {
         return makeApiRequest('comics')
             .then((response) {
-                var success = response.statusCode == 200;
-                return new Future.value(success);
+                return response.statusCode == 200;
             });
     }
 
@@ -37,7 +36,7 @@ class MarvelApi {
                     .map((c) => new Comic.fromJson(c))
                     .toList();
 
-                return new Future.value(comics);
+                return comics;
             });
     }
 
@@ -59,7 +58,7 @@ class MarvelApi {
                     .map((c) => new Character.fromJson(c))
                     .toList();
 
-                return new Future.value(characters);
+                return characters;
             });
     }
 
@@ -82,7 +81,7 @@ class MarvelApi {
             .then((response) {
                 var body = JSON.decode(response.body);
                 var results = body['data']['results'];
-                return new Future.value(results);
+                return results;
             });
     }
 
