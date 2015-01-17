@@ -103,9 +103,10 @@ void main() {
                     .then(asyncExpectation);
             });
 
-            test('each comic has title, description and thumbnailUrl as properties', () {
+            test('each comic has id, title, description and thumbnailUrl as properties', () {
                 var asyncExpectation = expectAsync((comics) {
                     var comic = comics[0];
+                    expect(comic.id, isPositive);
                     expect(comic.title, isNot(isEmpty));
                     expect(comic.description, isNot(isEmpty));
                     expect(comic.thumbnailUrl, isNot(isEmpty));
