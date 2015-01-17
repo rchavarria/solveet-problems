@@ -136,6 +136,7 @@ void main() {
             test('each character has name, description and thumbnailUrl as properties', () {
                 var asyncExpectation = expectAsync((characters) {
                     var character = characters[0];
+                    expect(character.id, isPositive);
                     expect(character.name, isNot(isEmpty));
                     expect(character.description, isEmpty);
                     expect(character.thumbnailUrl, isNot(isEmpty));
