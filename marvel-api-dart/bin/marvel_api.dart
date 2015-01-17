@@ -30,47 +30,21 @@ class MarvelApi {
     }
 
     Future<List<Comic>> comics() {
-        return extractResultsFromRequest('comics')
-            .then((results) {
-                var comics = results
-                    .map((c) => new Comic.fromJson(c))
-                    .toList();
-
-                return comics;
-            });
+        return retrieveEntity('comics', (c) => new Comic.fromJson(c));
     }
 
     Future<Comic> comicById(int id) {
-        return extractResultsFromRequest('comics/${id}')
-            .then((results) {
-                var comics = results
-                    .map((c) => new Comic.fromJson(c))
-                    .toList();
-
-                return comics[0];
-            });
+        return retrieveEntity('comics/${id}', (c) => new Comic.fromJson(c))
+            .then((comicInAList) => comicInAList[0]);
     }
 
     Future<List<Character>> characters() {
-        return extractResultsFromRequest('characters')
-            .then((results) {
-                var characters = results
-                    .map((c) => new Character.fromJson(c))
-                    .toList();
-
-                return characters;
-            });
+        return retrieveEntity('characters', (c) => new Character.fromJson(c));
     }
 
     Future<Character> characterById(int id) {
-        return extractResultsFromRequest('characters/${id}')
-            .then((results) {
-                var characters = results
-                    .map((c) => new Character.fromJson(c))
-                    .toList();
-
-                return characters[0];
-            });
+        return retrieveEntity('characters/${id}', (c) => new Character.fromJson(c))
+            .then((characterInAList) => characterInAList[0]);
     }
 
     Future makeApiRequest(entity) {
@@ -87,12 +61,16 @@ class MarvelApi {
         return http.get(url);
     }
 
-    Future extractResultsFromRequest(entity) {
+    Future retrieveEntity(entity, mapper) {
         return makeApiRequest(entity)
             .then((response) {
                 var body = JSON.decode(response.body);
                 var results = body['data']['results'];
-                return results;
+                var entities = results
+                    .map(mapper)
+                    .toList();
+
+                return entities;
             });
     }
 
