@@ -171,7 +171,18 @@ class Comic {
         id = json['id'];
         title = json['title'];
         description = json['description'];
-        thumbnailUrl = json['thumbnail']['path'];
+        thumbnailUrl = buildThumbnailUrl(json);
+    }
+
+    String buildThumbnailUrl(Map json) {
+        Map thumbnail = json['thumbnail'];
+        if (thumbnail == null) {
+            return '';
+        }
+
+        var path = thumbnail['path'];
+        var extension = thumbnail['extension'];
+        return '${path}.${extension}';
     }
 
 }
