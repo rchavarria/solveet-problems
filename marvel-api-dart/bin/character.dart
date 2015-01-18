@@ -1,4 +1,7 @@
+import 'image_url_builder.dart';
+
 class Character {
+    var builder = new ImageUrlBuilder();
     String id;
     String name;
     String description;
@@ -8,18 +11,8 @@ class Character {
         id = json['id'];
         name = json['name'];
         description = json['description'];
-        thumbnailUrl = buildThumbnailUrl(json);
+        thumbnailUrl = builder.fromMap(json['thumbnail']);
     }
 
-    String buildThumbnailUrl(Map json) {
-        Map thumbnail = json['thumbnail'];
-        if (thumbnail == null) {
-            return '';
-        }
-
-        var path = thumbnail['path'];
-        var extension = thumbnail['extension'];
-        return '${path}.${extension}';
-    }
 }
 
