@@ -183,8 +183,8 @@ void main() {
 
 MarvelApi buildMarvelApi() {
     var md5 = new Utf8String2MD5();
-    var reader = new KeyFileReader('.env');
-    reader.read();
+    var reader = new KeyFileReader('.env')
+        ..read();
 
     return new MarvelApi(md5, reader.privateKey, reader.publicKey);
 }
