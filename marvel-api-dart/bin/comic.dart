@@ -1,4 +1,7 @@
+import 'image_url_builder.dart';
+
 class Comic {
+    var builder = new ImageUrlBuilder();
     String id;
     String title;
     String description;
@@ -8,7 +11,7 @@ class Comic {
         id = json['id'];
         title = json['title'];
         description = json['description'];
-        thumbnailUrl = json['thumbnail']['path'];
+        thumbnailUrl = builder.fromMap(json['thumbnail']);
     }
 
 }
