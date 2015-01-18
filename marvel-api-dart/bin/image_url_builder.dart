@@ -1,4 +1,11 @@
+/**
+  * Handles Image entities
+  */
 class ImageUrlBuilder {
+
+    /**
+      * Builds an Image URL from a map returned by the API
+      */
     String fromMap(Map thumbnail) {
         if (thumbnail == null) {
             return '';
@@ -8,4 +15,5 @@ class ImageUrlBuilder {
         var extension = thumbnail['extension'];
         return '${path}.${extension}';
     }
+
 }
