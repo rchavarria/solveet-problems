@@ -1,3 +1,10 @@
+//
+// Código de la solución unido en un único fichero.
+// Para seguir todo el proceso, tener las clases separadas por ficheros,
+// y poder ejecutar los tests, echar un vistazo al código en github:
+// https://github.com/rchavarria/solveet-problems/tree/master/marvel-api-dart
+//
+
 import 'dart:typed_data'; // algunos tipos necesarios para calcular MD5
 import 'dart:async'; // soporte para Futures
 import 'dart:convert'; // soporte para JSON
