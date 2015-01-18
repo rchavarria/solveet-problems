@@ -3,6 +3,10 @@ import 'package:cipher/impl/server.dart';
 import 'dart:typed_data';
 import 'dart:convert';
 
+/**
+  * Utility class that encapsulates the process of calculating a MD5 hash of a
+  * given message
+  */
 class Utf8String2MD5 {
 
     Utf8Encoder encoder;
@@ -15,6 +19,9 @@ class Utf8String2MD5 {
         md5Digest = new Digest('MD5');
     }
 
+    /**
+      * Computes the MD5 has of `message`
+      */
     String digest(String message) {
         List<int> utf8Data = encoder.convert(message);
         Utf8List inputData = new Uint8List.fromList(utf8Data);
