@@ -19,7 +19,7 @@ void main() {
 
     api.authenticate().then((authenticated) {
         if (!authenticated) {
-            print('Error, marvel no pudo autentificarte :(');
+            print('Error, marvel no pudo autentificarte, ¿has usado las claves adecuadas?');
             return;
         }
 
