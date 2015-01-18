@@ -2,8 +2,6 @@ import 'dart:typed_data';
 import 'dart:async';
 import 'dart:convert';
 
-// paquete para ejecución de tests
-import 'package:unittest/unittest.dart';
 // paquete de cifrado, incluye clase para calcular MD5
 import 'package:cipher/cipher.dart';
 import 'package:cipher/impl/server.dart';
@@ -11,38 +9,32 @@ import 'package:cipher/impl/server.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
+    print('Recuperando comics y personajes de Marvel');
 
-    group('Ejemplo para Solveet', () {
+    // crea instancia de la clase principal
+    String privateKey = '<escriba aqui su clave privada>';
+    String publicKey = '<escriba aqui su clave pública>';
+    var md5 = new Utf8String2MD5();
+    var api = new MarvelApi(md5, privateKey, publicKey);
 
-        test('imprime comics y personajes', () {
-            // crea instancia de la clase principal
-            String privateKey = '<escriba aqui su clave privada>';
-            String publicKey = '<escriba aqui su clave pública>';
-            var md5 = new Utf8String2MD5();
-            var api = new MarvelApi(md5, privateKey, publicKey);
+    api.authenticate().then((authenticated) {
+        if (!authenticated) {
+            print('Error, marvel no pudo autentificarte :(');
+            return;
+        }
 
-            api.authenticate().then((authenticated) {
-                if (!authenticated) {
-                    print('Error, marvel no pudo autentificarte :(');
-                    return;
-                }
-
-                // consulta la lista de comics e imprime su título
-                api.comics().then((comics) {
-                    print('Comics:');
-                    comics.forEach((c) => print('- ${c.title}'));
-                });
-
-                // consulta la lista de persojanes e imprime su nombre
-                api.characters().then((characters) {
-                    print('Personajes:');
-                    characters.forEach((c) => print('- ${c.name}'));
-                });
-            });
+        // consulta la lista de comics e imprime su título
+        api.comics().then((comics) {
+            print('Comics:');
+            comics.forEach((c) => print('- ${c.title}'));
         });
 
+        // consulta la lista de persojanes e imprime su nombre
+        api.characters().then((characters) {
+            print('Personajes:');
+            characters.forEach((c) => print('- ${c.name}'));
+        });
     });
-
 }
 
 /**
