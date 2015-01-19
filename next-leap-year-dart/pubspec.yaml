@@ -1,0 +1,7 @@
+name: next_leap_year
+author: rchavarria
+description: A program writen in Dart that computes if a given year is leap and it returns the next leap year
+homepage: http://rchavarria.github.io
+dev_dependencies:
+    unittest: '>=0.10.0'
+
