@@ -15,11 +15,11 @@ Or from Dart Editor, select the project, go to menu Tools > Pub get.
 
 To run the tests from command line:
 
-    dart test/next_leap_year.dart
+    dart test/next_leap_year_test.dart
 
 To run tests from Dart editor:
 
-- right click on `test/next_leap_year.dart` file, and choose Run
+- right click on `test/next_leap_year_test.dart` file, and choose Run
 
 ## Resources
 
