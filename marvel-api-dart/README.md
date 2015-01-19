@@ -22,13 +22,17 @@ have the following format:
 First, you must be sure you have all dependencies. Run command `pub get`.
 Or from Dart Editor, select the project, go to menu Tools > Pub get.
 
-To run the tests from command line:
+To run the tests from command line, type any of these commands, it depends
+on which test do you want to run:
 
-    dart bin/marvel.dart
+    dart test/marvel_api_test.dart
+    dart test/read_key_file_test.dart
+    dart test/string2md5_test.dart
 
 To run tests from Dart editor:
 
-- right click on `bin/marvel.dart` file, and choose Run
+- Right click on any of these files: `test/marvel_api_test.dart`,
+`test/read_key_file_test.dart` or `test/string2md5_test.dart`, and choose Run
 
 ## Resources
 
