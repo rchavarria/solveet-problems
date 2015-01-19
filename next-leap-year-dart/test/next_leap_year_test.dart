@@ -1,4 +1,5 @@
 import 'package:unittest/unittest.dart';
+import '../bin/next_leap_year.dart';
 
 void main() {
 
@@ -6,6 +7,16 @@ void main() {
 
         test('hooks up', () {
             expect(2 - 1, equals(1));
+        });
+
+    });
+
+    group('NextLeapYear', () {
+
+        test('years divisible by 4 are leap year, so they are returned as they are', () {
+            var testLeapYear = new NextLeapYear(1980);
+            var next = testLeapYear.next();
+            expect(next.year, equals(1980));
         });
 
     });
