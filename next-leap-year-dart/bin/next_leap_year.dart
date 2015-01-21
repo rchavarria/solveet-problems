@@ -8,10 +8,8 @@ class NextLeapYear {
             return this;
         }
 
-        int next = year + 1;
-        while (!isLeap(next)) {
-            next++;
-        }
+        int differenceToLeap = 4 - (year % 4);
+        int next = year + differenceToLeap;
 
         return new NextLeapYear(next);
     }
