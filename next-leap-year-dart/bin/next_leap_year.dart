@@ -4,7 +4,11 @@ class NextLeapYear {
     NextLeapYear(this.year);
 
     NextLeapYear next() {
-        return this;
+        if (year % 4 == 0) {
+            return this;
+        }
+
+        return new NextLeapYear(year + 1);
     }
 
 }

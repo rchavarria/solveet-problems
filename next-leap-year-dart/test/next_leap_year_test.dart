@@ -19,6 +19,12 @@ void main() {
             expect(next.year, equals(1980));
         });
 
+        test('a no-leap year returns the next year divisible by 4', () {
+            var testLeapYear = new NextLeapYear(1979);
+            var next = testLeapYear.next();
+            expect(next.year, equals(1980));
+        });
+
     });
 
 }
