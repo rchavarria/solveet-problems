@@ -8,7 +8,7 @@ class NextLeapYear {
             return this;
         }
 
-        return new NextLeapYear(year + 1);
+        return new NextLeapYear(year + 1).next();
     }
 
 }
