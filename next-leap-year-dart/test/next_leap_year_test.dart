@@ -25,6 +25,12 @@ void main() {
             expect(new NextLeapYear(1979).next().year, equals(1980));
         });
 
+        test('years divisible by 100 are no leap, so it returns the next leap year', () {
+            var testLeapYear = new NextLeapYear(1900);
+            var next = testLeapYear.next();
+            expect(next.year, equals(1904));
+        });
+
     });
 
 }

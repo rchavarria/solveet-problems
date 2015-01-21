@@ -15,6 +15,10 @@ class NextLeapYear {
     }
 
     boolean isLeap(candidateYear) {
+        if (candidateYear % 100 == 0) {
+            return false;
+        }
+
         return candidateYear % 4 == 0;
     }
 
