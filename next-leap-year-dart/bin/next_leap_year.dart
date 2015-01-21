@@ -4,11 +4,20 @@ class NextLeapYear {
     NextLeapYear(this.year);
 
     NextLeapYear next() {
-        if (year % 4 == 0) {
+        if (isLeap(year)) {
             return this;
         }
 
-        return new NextLeapYear(year + 1).next();
+        int next = year + 1;
+        while (!isLeap(next)) {
+            next++;
+        }
+
+        return new NextLeapYear(next);
+    }
+
+    boolean isLeap(candidateYear) {
+        return candidateYear % 4 == 0;
     }
 
 }
