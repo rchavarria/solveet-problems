@@ -25,7 +25,7 @@ class NextLeapYear {
     }
 
     boolean isLeap(candidateYear) {
-        if (candidateYear % LEAP_YEARS_INTERVAL_EXCEPTION == 0) {
+        if (isAnExceptionToLeap(candidateYear)) {
             return false;
         }
 
@@ -33,5 +33,6 @@ class NextLeapYear {
     }
 
     boolean matchLeapInterval(candidate) => candidate % MINIMUM_LEAP_INTERVAL == 0;
+    boolean isAnExceptionToLeap(candidate) => candidate % LEAP_YEARS_INTERVAL_EXCEPTION == 0;
 
 }
