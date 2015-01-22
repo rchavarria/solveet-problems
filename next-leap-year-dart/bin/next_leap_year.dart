@@ -10,6 +10,9 @@ class NextLeapYear {
 
         int differenceToLeap = 4 - (year % 4);
         int next = year + differenceToLeap;
+        if (!isLeap(next)) {
+            next += 4;
+        }
 
         return new NextLeapYear(next);
     }
