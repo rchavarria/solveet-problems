@@ -29,7 +29,9 @@ class NextLeapYear {
             return false;
         }
 
-        return candidateYear % MINIMUM_LEAP_INTERVAL == 0;
+        return matchLeapInterval(candidateYear);
     }
+
+    boolean matchLeapInterval(candidate) => candidate % MINIMUM_LEAP_INTERVAL == 0;
 
 }
