@@ -8,13 +8,19 @@ class NextLeapYear {
             return this;
         }
 
-        int differenceToLeap = 4 - (year % 4);
+        int next = findGoodCandidate(year);
+
+        return new NextLeapYear(next);
+    }
+
+    int findGoodCandidate(startingAtYear) {
+        int differenceToLeap = 4 - (startingAtYear % 4);
         int next = year + differenceToLeap;
         if (!isLeap(next)) {
             next += 4;
         }
 
-        return new NextLeapYear(next);
+        return next;
     }
 
     boolean isLeap(candidateYear) {
