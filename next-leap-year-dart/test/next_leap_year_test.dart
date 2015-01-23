@@ -33,6 +33,10 @@ void main() {
             expect(new NextLeapYear(1899).next().year, equals(1904));
         });
 
+        test('years divisible by 400 are leap year, so they are returned as they are', () {
+            expect(new NextLeapYear(2000).next().year, equals(2000));
+        });
+
     });
 
 }
