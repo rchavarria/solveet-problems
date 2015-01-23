@@ -37,6 +37,12 @@ void main() {
             expect(new NextLeapYear(2000).next().year, equals(2000));
         });
 
+        test('a no-leap year returns the next year divisible by 4, but not by 100, but it can be divisible by 400', () {
+            expect(new NextLeapYear(1997).next().year, equals(2000));
+            expect(new NextLeapYear(1998).next().year, equals(2000));
+            expect(new NextLeapYear(1999).next().year, equals(2000));
+        });
+
     });
 
 }
