@@ -14,9 +14,7 @@ void main() {
     group('NextLeapYear', () {
 
         test('years divisible by 4 are leap year, so they are returned as they are', () {
-            var testLeapYear = new NextLeapYear(1980);
-            var next = testLeapYear.next();
-            expect(next.year, equals(1980));
+            expect(new NextLeapYear(1980).next().year, equals(1980));
         });
 
         test('a no-leap year returns the next year divisible by 4', () {
@@ -26,9 +24,7 @@ void main() {
         });
 
         test('years divisible by 100 are no leap, so it returns the next leap year', () {
-            var testLeapYear = new NextLeapYear(1900);
-            var next = testLeapYear.next();
-            expect(next.year, equals(1904));
+            expect(new NextLeapYear(1900).next().year, equals(1904));
         });
 
         test('a no-leap year returns the next year divisible by 4, but not by 100', () {
