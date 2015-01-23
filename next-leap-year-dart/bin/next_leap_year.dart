@@ -1,6 +1,7 @@
 class NextLeapYear {
     static int MINIMUM_LEAP_INTERVAL = 4;
     static int LEAP_YEARS_INTERVAL_EXCEPTION = 100;
+    static int FIX_LEAP_INTERVAL_EXCEPTION_INTERVAL = 400;
     int year;
 
     NextLeapYear(this.year);
@@ -25,7 +26,7 @@ class NextLeapYear {
     }
 
     boolean isLeap(candidateYear) {
-        if (candidateYear % 400 == 0) {
+        if (dirtyFixToLeapExceptions(candidateYear)) {
             return true;
         }
 
@@ -38,5 +39,6 @@ class NextLeapYear {
 
     boolean matchLeapInterval(candidate) => candidate % MINIMUM_LEAP_INTERVAL == 0;
     boolean isAnExceptionToLeap(candidate) => candidate % LEAP_YEARS_INTERVAL_EXCEPTION == 0;
+    boolean dirtyFixToLeapExceptions(candidate) => candidate % FIX_LEAP_INTERVAL_EXCEPTION_INTERVAL == 0;
 
 }
