@@ -8,8 +8,5 @@ void main() {
 
 int getEquilibratedNumber(int number) => number + reverseNumber(number);
 
-int reverseNumber(int number) {
-    var digits = number.toString().split('');
-    return int.parse(digits.reversed.join());
-}
+int reverseNumber(int number) => int.parse(number.toString().split('').reversed.join());
 
