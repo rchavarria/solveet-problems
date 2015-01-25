@@ -1,13 +1,9 @@
 void main() {
-    print('Start');
-    var number = 123;
-    var intReversed = reverseNumber(number);
-    
-    print('sum: ${number + intReversed}');
-    [1, 2, 10, 15, 123, 321, 1234, 7890].forEach((number) {
-        var equilibrated = getEquilibratedNumber(number);
-        print('${number} + <mirrored>: ${equilibrated}');
-    });
+    [1, 2, 10, 15, 123, 321, 1234, 7890]
+        .forEach((number) {
+            var equilibrated = getEquilibratedNumber(number);
+            print('${number} + <mirrored>: ${equilibrated}');
+        });
 }
 
 int getEquilibratedNumber(int number) => number + reverseNumber(number);
@@ -18,3 +14,4 @@ int reverseNumber(int number) {
     digits.forEach((d) => reversed.insert(0, d));
     return int.parse(reversed.join());
 }
+
