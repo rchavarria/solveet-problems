@@ -6,9 +6,7 @@ void main() {
     print('sum: ${number + intReversed}');
 }
 
-int getEquilibratedNumber(int number) {
-    return number + reverseNumber(number);
-}
+int getEquilibratedNumber(int number) => number + reverseNumber(number);
 
 int reverseNumber(int number) {
     var digits = number.toString().split('');
