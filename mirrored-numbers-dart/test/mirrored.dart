@@ -10,5 +10,8 @@ void main() {
     print('reversed: ${reversed}');
     var strReversed = reversed.join();
     print ('strReversed: ${strReversed}');
-
+    var intReversed = int.parse(strReversed);
+    print ('intReversed: ${intReversed}');
+    
+    print('sum: ${number + intReversed}');
 }
