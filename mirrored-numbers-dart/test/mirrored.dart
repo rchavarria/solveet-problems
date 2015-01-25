@@ -10,8 +10,6 @@ int getEquilibratedNumber(int number) => number + reverseNumber(number);
 
 int reverseNumber(int number) {
     var digits = number.toString().split('');
-    var reversed = [];
-    digits.forEach((d) => reversed.insert(0, d));
-    return int.parse(reversed.join());
+    return int.parse(digits.reversed.join());
 }
 
