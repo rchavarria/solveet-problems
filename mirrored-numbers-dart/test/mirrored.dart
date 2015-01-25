@@ -15,3 +15,12 @@ void main() {
     
     print('sum: ${number + intReversed}');
 }
+
+int reverseNumber(int number) {
+    var strNumber = number.toString();
+    var digits = strNumber.split('');
+    var reversed = [];
+    digits.forEach((d) => reversed.insert(0, d));
+    var strReversed = reversed.join();
+    return int.parse(strReversed);
+}
