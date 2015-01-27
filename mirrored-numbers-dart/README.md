@@ -1,7 +1,7 @@
 # Next leap year
 
 Solution to the solveet.com problem: 
-[Equilibrated numbers]
+[Equilibrated number]
 
 ## Requirements
 
@@ -23,6 +23,6 @@ To run tests from Dart editor:
 
 ## Resources
 
-- [Equilibrated numbers]
+- [Equilibrated number]
 
-[Equilibrated numbers]: http://www.solveet.com
+[Equilibrated number]: http://www.solveet.com/exercises/Numero-equilibrado/344
