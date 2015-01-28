@@ -1,0 +1,7 @@
+name: mirrored_numbers
+author: rchavarria
+description: A program writen in Dart that computes the sum of two numbers, given x = 123, the result is the sum of x + 321
+homepage: http://rchavarria.github.io
+dev_dependencies:
+    unittest: '>=0.10.0'
+
