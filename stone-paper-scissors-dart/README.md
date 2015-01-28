@@ -1,12 +1,12 @@
 # Next leap year
 
 Solution to the solveet.com problem: 
-[Equilibrated number]
+[Stone, paper, scissors]
 
 ## Requirements
 
-- [Dart SDK](https://www.dartlang.org) needs to be installed
-- [Dart editor](https://www.dartlang.org) can be installed
+- [Dart SDK](https://www.dartlang.org): needs to be installed
+to play the game "Stone, Paper, Scissors"
 
 ## Running the tests
 
@@ -15,14 +15,14 @@ Or from Dart Editor, select the project, go to menu Tools > Pub get.
 
 To run the tests from command line:
 
-    dart test/mirrored.dart
+    dart test/stone_paper_scissors.dart
 
 To run tests from Dart editor:
 
-- right click on `test/mirrored.dart` file, and choose Run
+- right click on `test/stone_paper_scissors.dart` file, and choose Run
 
 ## Resources
 
-- [Equilibrated number]
+- [Stone, paper, scissors]
 
-[Equilibrated number]: http://www.solveet.com/exercises/Numero-equilibrado/344
+[Stone, paper, scissors]: http://www.solveet.com/exercises/Piedra-papel-o-tijera/347
