@@ -14,8 +14,7 @@ void main() {
 
         test('paper wins stone', () {
             var game = new Game();
-            var gameResult = game.play('paper', 'stone');
-            expect(gameResult, equals('Player 1'));
+            expect(game.play('paper', 'stone'), equals('Player 1'));
         });
 
     });
