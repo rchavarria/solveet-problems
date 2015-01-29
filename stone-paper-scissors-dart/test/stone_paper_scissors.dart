@@ -14,6 +14,7 @@ void main() {
 
         test('paper wins stone', () {
             expect(game.play('paper', 'stone'), equals('Player 1'));
+            expect(game.play('stone', 'paper'), equals('Player 2'));
         });
 
     });

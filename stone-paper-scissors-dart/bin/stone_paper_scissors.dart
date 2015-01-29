@@ -6,7 +6,11 @@ class Game {
             return 'draw';
         }
 
-        return 'Player 1';
+        if (choice1 == 'paper') {
+            return 'Player 1';
+        }
+
+        return 'Player 2';
     }
 
 }
