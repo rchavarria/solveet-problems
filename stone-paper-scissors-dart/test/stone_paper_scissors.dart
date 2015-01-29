@@ -7,8 +7,9 @@ void main() {
 
         test('returns draw if choices are equals', () {
             var game = new Game();
-            var gameResult = game.play('stone', 'stone');
-            expect(gameResult, equals('draw'));
+            expect(game.play('stone', 'stone'), equals('draw'));
+            expect(game.play('paper', 'paper'), equals('draw'));
+            expect(game.play('scissors', 'scissors'), equals('draw'));
         });
 
         test('paper wins stone', () {
