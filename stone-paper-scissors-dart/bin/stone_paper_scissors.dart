@@ -11,18 +11,20 @@ class Game {
             if (choice2 == 'stone') {
                 return 'Player 2';
             }
-            return 'Player 1';
+            break;
         case 'paper':
             if (choice2 == 'scissors') {
                 return 'Player 2';
             }
-            return 'Player 1';
+            break;
         case 'stone':
             if (choice2 == 'paper') {
                 return 'Player 2';
             }
-            return 'Player 1';
+            break;
         }
+
+        return 'Player 1';
     }
 
 }
