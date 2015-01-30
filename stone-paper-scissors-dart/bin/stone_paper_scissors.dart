@@ -19,8 +19,6 @@ class Game {
         }
     };
 
-    String play(String choice1, String choice2) {
-        return rulesMap[choice1][choice2];
-    }
+    String play(String choice1, String choice2) => rulesMap[choice1][choice2];
 
 }
