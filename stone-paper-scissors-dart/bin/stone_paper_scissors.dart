@@ -6,12 +6,17 @@ class Game {
             return 'draw';
         }
 
+        var rulesMap = {
+            'scissors': {
+                'stone': 'Player 2',
+                'paper': 'Player 1',
+                'scissors': 'draw'
+            }
+        };
+
         switch(choice1) {
         case 'scissors':
-            if (choice2 == 'stone') {
-                return 'Player 2';
-            }
-            break;
+            return rulesMap[choice1][choice2];
         case 'paper':
             if (choice2 == 'scissors') {
                 return 'Player 2';
