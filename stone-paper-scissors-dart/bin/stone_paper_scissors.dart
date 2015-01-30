@@ -17,16 +17,12 @@ class Game {
                 return 'Player 2';
             }
             return 'Player 1';
-        }
-
-        if (choice2 == 'scissors') {
-            if (choice1 == 'stone') {
-                return 'Player 1';
+        case 'stone':
+            if (choice2 == 'paper') {
+                return 'Player 2';
             }
-            return 'Player 2';
+            return 'Player 1';
         }
-
-        return 'Player 2';
     }
 
 }
