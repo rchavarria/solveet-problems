@@ -6,6 +6,12 @@ class Game {
             return 'draw';
         }
 
+        if (choice1 == 'scissors') {
+            return 'Player 1';
+        } else if (choice2 == 'scissors') {
+            return 'Player 2';
+        }
+
         if (choice1 == 'paper') {
             return 'Player 1';
         }
