@@ -12,6 +12,11 @@ class Game {
                 return 'Player 2';
             }
             return 'Player 1';
+        case 'paper':
+            if (choice2 == 'scissors') {
+                return 'Player 2';
+            }
+            return 'Player 1';
         }
 
         if (choice2 == 'scissors') {
@@ -19,10 +24,6 @@ class Game {
                 return 'Player 1';
             }
             return 'Player 2';
-        }
-
-        if (choice1 == 'paper') {
-            return 'Player 1';
         }
 
         return 'Player 2';
