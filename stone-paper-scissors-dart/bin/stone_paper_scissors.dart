@@ -7,16 +7,21 @@ class Game {
         }
 
         var rulesMap = {
-            'scissors': {
-                'stone': 'Player 2',
-                'paper': 'Player 1',
-                'scissors': 'draw'
+            'stone': {
+                'stone': 'draw',
+                'paper': 'Player 2',
+                'scissors': 'Player 1'
             },
             'paper': {
                 'stone': 'Player 1',
                 'paper': 'draw',
                 'scissors': 'Player 2'
-             }
+            },
+            'scissors': {
+                'stone': 'Player 2',
+                'paper': 'Player 1',
+                'scissors': 'draw'
+            }
         };
 
         switch(choice1) {
@@ -25,10 +30,7 @@ class Game {
         case 'paper':
             return rulesMap[choice1][choice2];
         case 'stone':
-            if (choice2 == 'paper') {
-                return 'Player 2';
-            }
-            break;
+            return rulesMap[choice1][choice2];
         }
 
         return 'Player 1';
