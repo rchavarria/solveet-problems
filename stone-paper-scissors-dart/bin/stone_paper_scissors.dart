@@ -24,16 +24,7 @@ class Game {
             }
         };
 
-        switch(choice1) {
-        case 'scissors':
-            return rulesMap[choice1][choice2];
-        case 'paper':
-            return rulesMap[choice1][choice2];
-        case 'stone':
-            return rulesMap[choice1][choice2];
-        }
-
-        return 'Player 1';
+        return rulesMap[choice1][choice2];
     }
 
 }
