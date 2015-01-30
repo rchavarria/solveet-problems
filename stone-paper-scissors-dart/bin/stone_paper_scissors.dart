@@ -7,8 +7,14 @@ class Game {
         }
 
         if (choice1 == 'scissors') {
+            if (choice2 == 'stone') {
+                return 'Player 2';
+            }
             return 'Player 1';
         } else if (choice2 == 'scissors') {
+            if (choice1 == 'stone') {
+                return 'Player 1';
+            }
             return 'Player 2';
         }
 
