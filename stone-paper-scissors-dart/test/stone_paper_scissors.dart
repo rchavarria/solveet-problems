@@ -3,9 +3,9 @@ import 'package:unittest/unittest.dart';
 import '../bin/stone_paper_scissors.dart';
 
 void main() {
+    var game = new Game();
 
     group('Game rules', () {
-        var game = new Game();
 
         test('returns draw if choices are equals', () {
             expect(game.play('stone', 'stone'), equals('draw'));
@@ -37,6 +37,11 @@ void main() {
             var randomNumber = random.nextInt(3);
             expect(randomNumber, greaterThanOrEqualTo(0));
             expect(randomNumber, lessThan(3));
+        });
+
+        test('game generates a choice randomly', () {
+            var randomChoice = game.generateRandomChoice();
+            expect(randomChoice, anyOf(equals('stone'), equals('paper'), equals('scissors')));
         });
 
     });

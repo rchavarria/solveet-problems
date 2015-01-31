@@ -1,5 +1,7 @@
+import 'dart:math';
 
 class Game {
+    var random = new Random();
 
     var rulesMap = {
         'stone': {
@@ -21,4 +23,5 @@ class Game {
 
     String play(String choice1, String choice2) => rulesMap[choice1][choice2];
 
+    String generateRandomChoice() => ['stone', 'paper', 'scissors'].elementAt(random.nextInt(3));
 }
