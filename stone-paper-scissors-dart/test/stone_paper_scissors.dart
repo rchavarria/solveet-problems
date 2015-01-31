@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:unittest/unittest.dart';
 import '../bin/stone_paper_scissors.dart';
 
@@ -25,6 +26,17 @@ void main() {
         test('stone wins scissors', () {
             expect(game.play('stone', 'scissors'), equals('Player 1'));
             expect(game.play('scissors', 'stone'), equals('Player 2'));
+        });
+
+    });
+
+    group('Random numbers', () {
+
+        test('how to generate them', () {
+            var random = new Random();
+            var randomNumber = random.nextInt(3);
+            expect(randomNumber, greaterThanOrEqualTo(0));
+            expect(randomNumber, lessThan(3));
         });
 
     });
