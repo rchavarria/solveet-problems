@@ -49,5 +49,14 @@ void main() {
 
     });
 
+    group('Game', () {
+
+        test('#execute', () {
+            var game = new Game();
+            game.execute();
+        });
+
+    });
+
 }
 
