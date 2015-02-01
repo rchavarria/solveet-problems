@@ -1,4 +1,6 @@
 import 'dart:math';
+import 'dart:io';
+
 import 'package:unittest/unittest.dart';
 import '../bin/stone_paper_scissors.dart';
 
@@ -42,6 +44,16 @@ void main() {
         test('game generates a choice randomly', () {
             var randomChoice = game.generateRandomChoice();
             expect(randomChoice, anyOf(equals('stone'), equals('paper'), equals('scissors')));
+        });
+
+    });
+
+    group('Standard input', () {
+
+        test('how to read from stdin', () {
+            print('Write foobar');
+            String line = stdin.readLineSync();
+            expect(line, equals('foobar'));
         });
 
     });
