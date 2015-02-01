@@ -49,15 +49,5 @@ void main() {
 
     });
 
-    group('Standard input', () {
-
-        test('how to read from stdin', () {
-            print('Write foobar');
-            String line = stdin.readLineSync();
-            expect(line, equals('foobar'));
-        });
-
-    });
-
 }
 
