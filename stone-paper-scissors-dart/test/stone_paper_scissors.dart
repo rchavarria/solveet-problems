@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:io';
 
 import 'package:unittest/unittest.dart';
-import '../bin/stone_paper_scissors.dart';
+import '../bin/game_rules.dart';
 
 void main() {
     var gameRules = new GameRules();
