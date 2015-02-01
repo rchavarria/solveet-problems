@@ -12,7 +12,13 @@ class Game {
     }
 
     String askUserForChoice() {
-        return 'scissors';
+        print('Write your choice (stone, paper, scissors): ');
+        String choice = stdin.readLineSync();
+
+        if (!rules.choices.contains(choice)) {
+            return askUserForChoice();
+        }
+        return choice;
     }
 
     void outputResult(userChoice, machineChoice, result) {
