@@ -16,7 +16,9 @@ class Game {
     }
 
     void outputResult(userChoice, machineChoice, result) {
-        print('Result: ${result}');
+        print('Player 1 choice: ${userChoice}');
+        print('Player 2 choice: ${machineChoice}');
+        print('Winner: ${result}');
     }
 
 }
