@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:unittest/unittest.dart';
 import '../bin/game_rules.dart';
+import '../bin/game.dart';
 
 void main() {
     var gameRules = new GameRules();
