@@ -5,29 +5,29 @@ import 'package:unittest/unittest.dart';
 import '../bin/stone_paper_scissors.dart';
 
 void main() {
-    var game = new Game();
+    var gameRules = new GameRules();
 
     group('Game rules', () {
 
         test('returns draw if choices are equals', () {
-            expect(game.play('stone', 'stone'), equals('draw'));
-            expect(game.play('paper', 'paper'), equals('draw'));
-            expect(game.play('scissors', 'scissors'), equals('draw'));
+            expect(gameRules.play('stone', 'stone'), equals('draw'));
+            expect(gameRules.play('paper', 'paper'), equals('draw'));
+            expect(gameRules.play('scissors', 'scissors'), equals('draw'));
         });
 
         test('paper wins stone', () {
-            expect(game.play('paper', 'stone'), equals('Player 1'));
-            expect(game.play('stone', 'paper'), equals('Player 2'));
+            expect(gameRules.play('paper', 'stone'), equals('Player 1'));
+            expect(gameRules.play('stone', 'paper'), equals('Player 2'));
         });
 
         test('scissors wins paper', () {
-            expect(game.play('scissors', 'paper'), equals('Player 1'));
-            expect(game.play('paper', 'scissors'), equals('Player 2'));
+            expect(gameRules.play('scissors', 'paper'), equals('Player 1'));
+            expect(gameRules.play('paper', 'scissors'), equals('Player 2'));
         });
 
         test('stone wins scissors', () {
-            expect(game.play('stone', 'scissors'), equals('Player 1'));
-            expect(game.play('scissors', 'stone'), equals('Player 2'));
+            expect(gameRules.play('stone', 'scissors'), equals('Player 1'));
+            expect(gameRules.play('scissors', 'stone'), equals('Player 2'));
         });
 
     });
@@ -41,8 +41,8 @@ void main() {
             expect(randomNumber, lessThan(3));
         });
 
-        test('game generates a choice randomly', () {
-            var randomChoice = game.generateRandomChoice();
+        test('gameRules generates a choice randomly', () {
+            var randomChoice = gameRules.generateRandomChoice();
             expect(randomChoice, anyOf(equals('stone'), equals('paper'), equals('scissors')));
         });
 

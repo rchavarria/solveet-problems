@@ -1,6 +1,6 @@
 import 'dart:math';
 
-class Game {
+class GameRules {
     var random = new Random();
     var choices = ['stone', 'paper', 'scissors'];
 
