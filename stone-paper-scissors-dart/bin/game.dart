@@ -1,12 +1,14 @@
 import 'dart:io';
+import 'dart:math';
 import 'game_rules.dart';
 
 class Game {
+    var random = new Random();
     var rules = new GameRules();
 
     void execute() {
         var userChoice = askUserForChoice();
-        var machineChoice = rules.generateRandomChoice();
+        var machineChoice = generateRandomChoice();
         var result = rules.play(userChoice, machineChoice);
         outputResult(userChoice, machineChoice, result);
     }
@@ -20,6 +22,8 @@ class Game {
         }
         return choice;
     }
+
+    String generateRandomChoice() => rules.choices.elementAt(random.nextInt(rules.choices.length));
 
     void outputResult(userChoice, machineChoice, result) {
         print('Player 1 choice: ${userChoice}');

@@ -7,6 +7,7 @@ import '../bin/game.dart';
 
 void main() {
     var gameRules = new GameRules();
+    var game = new Game();
 
     group('Game rules', () {
 
@@ -43,7 +44,7 @@ void main() {
         });
 
         test('gameRules generates a choice randomly', () {
-            var randomChoice = gameRules.generateRandomChoice();
+            var randomChoice = game.generateRandomChoice();
             expect(randomChoice, anyOf(equals('stone'), equals('paper'), equals('scissors')));
         });
 
