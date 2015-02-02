@@ -5,6 +5,7 @@ import 'game_rules.dart';
 class Game {
     var random = new Random();
     var rules = new GameRules();
+    var choices = ['stone', 'paper', 'scissors'];
 
     void execute() {
         var userChoice = askUserForChoice();
@@ -23,7 +24,7 @@ class Game {
         return choice;
     }
 
-    String generateRandomChoice() => rules.choices.elementAt(random.nextInt(rules.choices.length));
+    String generateRandomChoice() => choices.elementAt(random.nextInt(choices.length));
 
     void outputResult(userChoice, machineChoice, result) {
         print('Player 1 choice: ${userChoice}');

@@ -1,6 +1,5 @@
 
 class GameRules {
-    var choices = ['stone', 'paper', 'scissors'];
 
     var rulesMap = {
         'stone': {
