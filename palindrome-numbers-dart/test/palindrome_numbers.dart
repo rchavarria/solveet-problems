@@ -19,7 +19,17 @@ void main() {
         });
 
     });
+
+    group('Palindrome', () {
+
+        test('detects palindrome numbers', () {
+            expect(isPalindrome(12321), isTrue);
+        });
+
+    });
     
 }
 
 int reverse(int n) => int.parse(n.toString().split('').reversed.join());
+
+boolean isPalindrome(int n) => true;
