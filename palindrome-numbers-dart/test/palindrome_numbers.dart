@@ -26,6 +26,10 @@ void main() {
             expect(isPalindrome(12321), isTrue);
         });
 
+        test('detects non palindrome numbers', () {
+            expect(isPalindrome(123), isFalse);
+        });
+
     });
     
 }
