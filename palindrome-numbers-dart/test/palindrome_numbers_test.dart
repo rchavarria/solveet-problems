@@ -31,9 +31,12 @@ void main() {
         });
 
     });
-    
+
 }
 
 int reverse(int n) => int.parse(n.toString().split('').reversed.join());
 
-boolean isPalindrome(int n) => true;
+boolean isPalindrome(int n) {
+    int reversed = reverse(n);
+    return n.toString() == reversed.toString();
+}
