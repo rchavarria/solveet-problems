@@ -38,6 +38,10 @@ void main() {
             expect(isSumPalindrome(48), isFalse);
         });
 
+        test('sum is a palindrome number', () {
+            expect(isSumPalindrome(102), isTrue);
+        });
+
     });
 
 }
@@ -46,5 +50,5 @@ int reverse(int n) => int.parse(n.toString().split('').reversed.join());
 
 boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
 
-boolean isSumPalindrome(int n) => false;
+boolean isSumPalindrome(int n) => isPalindrome(n + reverse(n));
 
