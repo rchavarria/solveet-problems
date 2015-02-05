@@ -5,5 +5,7 @@ class Palindrome {
 
     boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
 
+    boolean isSumPalindrome(int n) => isPalindrome(n + reverse(n));
+
 }
 
