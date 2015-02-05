@@ -1,4 +1,5 @@
 import 'package:unittest/unittest.dart';
+import '../bin/palindrome_numbers.dart';
 
 void main() {
 
@@ -46,7 +47,7 @@ void main() {
 
 }
 
-int reverse(int n) => int.parse(n.toString().split('').reversed.join());
+int reverse(int n) => new Palindrome().reverse(n);
 
 boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
 
