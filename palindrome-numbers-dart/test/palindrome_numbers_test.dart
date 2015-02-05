@@ -36,7 +36,7 @@ void main() {
 
     group('PalindromeSum', () {
 
-        test('sum is not a palindrome number', () {
+        test('sum is not a palindrome number in the first iteration', () {
             expect(palindrome.isSumPalindrome(48), isFalse);
         });
 
