@@ -2,6 +2,7 @@ import 'package:unittest/unittest.dart';
 import '../bin/palindrome_numbers.dart';
 
 void main() {
+    var palindrome = new Palindrome();
 
     group('Hooks', () {
 
@@ -14,9 +15,9 @@ void main() {
     group('Reverse', () {
 
         test('reverses digits', () {
-            expect(reverse(11), equals(11));
-            expect(reverse(203), equals(302));
-            expect(reverse(1234), equals(4321));
+            expect(palindrome.reverse(11), equals(11));
+            expect(palindrome.reverse(203), equals(302));
+            expect(palindrome.reverse(1234), equals(4321));
         });
 
     });
@@ -47,9 +48,7 @@ void main() {
 
 }
 
-int reverse(int n) => new Palindrome().reverse(n);
+boolean isPalindrome(int n) => n.toString() == new Palindrome().reverse(n).toString();
 
-boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
-
-boolean isSumPalindrome(int n) => isPalindrome(n + reverse(n));
+boolean isSumPalindrome(int n) => isPalindrome(n + new Palindrome().reverse(n));
 
