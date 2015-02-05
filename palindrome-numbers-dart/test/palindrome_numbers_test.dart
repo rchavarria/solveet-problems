@@ -48,7 +48,7 @@ void main() {
 
 }
 
-boolean isPalindrome(int n) => n.toString() == new Palindrome().reverse(n).toString();
+boolean isPalindrome(int n) => new Palindrome().isPalindrome(n);
 
 boolean isSumPalindrome(int n) => isPalindrome(n + new Palindrome().reverse(n));
 
