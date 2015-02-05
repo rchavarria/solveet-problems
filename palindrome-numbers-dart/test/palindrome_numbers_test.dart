@@ -25,11 +25,11 @@ void main() {
     group('Palindrome', () {
 
         test('detects palindrome numbers', () {
-            expect(isPalindrome(12321), isTrue);
+            expect(palindrome.isPalindrome(12321), isTrue);
         });
 
         test('detects non palindrome numbers', () {
-            expect(isPalindrome(123), isFalse);
+            expect(palindrome.isPalindrome(123), isFalse);
         });
 
     });
@@ -48,7 +48,5 @@ void main() {
 
 }
 
-boolean isPalindrome(int n) => new Palindrome().isPalindrome(n);
-
-boolean isSumPalindrome(int n) => isPalindrome(n + new Palindrome().reverse(n));
+boolean isSumPalindrome(int n) => new Palindrome().isPalindrome(n + new Palindrome().reverse(n));
 
