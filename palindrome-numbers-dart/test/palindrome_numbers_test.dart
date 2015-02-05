@@ -44,6 +44,10 @@ void main() {
             expect(palindrome.isSumPalindrome(102), isTrue);
         });
 
+        test('sum is a palindrome number in the recursive solution', () {
+            expect(palindrome.sumIsPalindromeRecursively(48), isTrue);
+        });
+
     });
 
 }

@@ -7,5 +7,14 @@ class Palindrome {
 
     boolean isSumPalindrome(int n) => isPalindrome(n + reverse(n));
 
+    boolean sumIsPalindromeRecursively(int n) {
+        if (isSumPalindrome(n)) {
+            return true;
+        }
+
+        int sum = n + reverse(n);
+        return sumIsPalindromeRecursively(sum);
+    }
+
 }
 
