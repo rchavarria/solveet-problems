@@ -11,12 +11,11 @@ class Palindrome {
     boolean isSumPalindrome() => isPalindrome(number + reverse(number));
 
     boolean sumIsPalindromeRecursively() {
-        int sum = number + reverse(number);
-        if (isPalindrome(sum)) {
+        number = number + reverse(number);
+        if (isPalindrome(number)) {
             return true;
         }
 
-        number = sum;
         return sumIsPalindromeRecursively();
     }
 
