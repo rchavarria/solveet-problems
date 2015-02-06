@@ -1,5 +1,8 @@
 
 class Palindrome {
+    int number;
+
+    Palindrome(this.number);
 
     int reverse(int n) => int.parse(n.toString().split('').reversed.join());
 

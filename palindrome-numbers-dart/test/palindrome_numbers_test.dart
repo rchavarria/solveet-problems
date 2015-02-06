@@ -2,7 +2,7 @@ import 'package:unittest/unittest.dart';
 import '../bin/palindrome_numbers.dart';
 
 void main() {
-    var palindrome = new Palindrome();
+    var palindrome = new Palindrome(0);
 
     group('Reverse', () {
 
