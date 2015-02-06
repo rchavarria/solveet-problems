@@ -2,14 +2,13 @@ import 'package:unittest/unittest.dart';
 import '../bin/palindrome_numbers.dart';
 
 void main() {
-    var palindrome = new Palindrome(0);
 
     group('Reverse', () {
 
         test('reverses digits', () {
-            expect(palindrome.reverse(11), equals(11));
-            expect(palindrome.reverse(203), equals(302));
-            expect(palindrome.reverse(1234), equals(4321));
+            expect(new Palindrome(11).reverse(11), equals(11));
+            expect(new Palindrome(203).reverse(203), equals(302));
+            expect(new Palindrome(1234).reverse(1234), equals(4321));
         });
 
     });
@@ -17,11 +16,11 @@ void main() {
     group('Palindrome', () {
 
         test('detects palindrome numbers', () {
-            expect(palindrome.isPalindrome(12321), isTrue);
+            expect(new Palindrome(12321).isPalindrome(12321), isTrue);
         });
 
         test('detects non palindrome numbers', () {
-            expect(palindrome.isPalindrome(123), isFalse);
+            expect(new Palindrome(123).isPalindrome(123), isFalse);
         });
 
     });
@@ -29,15 +28,15 @@ void main() {
     group('PalindromeSum', () {
 
         test('sum is not a palindrome number in the first iteration', () {
-            expect(palindrome.isSumPalindrome(48), isFalse);
+            expect(new Palindrome(48).isSumPalindrome(48), isFalse);
         });
 
         test('sum is a palindrome number', () {
-            expect(palindrome.isSumPalindrome(102), isTrue);
+            expect(new Palindrome(102).isSumPalindrome(102), isTrue);
         });
 
         test('sum is a palindrome number in the recursive solution', () {
-            expect(palindrome.sumIsPalindromeRecursively(48), isTrue);
+            expect(new Palindrome(48).sumIsPalindromeRecursively(48), isTrue);
         });
 
     });
