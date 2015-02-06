@@ -28,15 +28,15 @@ void main() {
     group('PalindromeSum', () {
 
         test('sum is not a palindrome number in the first iteration', () {
-            expect(new Palindrome(48).isSumPalindrome(48), isFalse);
+            expect(new Palindrome(48).isSumPalindrome(), isFalse);
         });
 
         test('sum is a palindrome number', () {
-            expect(new Palindrome(102).isSumPalindrome(102), isTrue);
+            expect(new Palindrome(102).isSumPalindrome(), isTrue);
         });
 
         test('sum is a palindrome number in the recursive solution', () {
-            expect(new Palindrome(48).sumIsPalindromeRecursively(48), isTrue);
+            expect(new Palindrome(48).sumIsPalindromeRecursively(), isTrue);
         });
 
     });

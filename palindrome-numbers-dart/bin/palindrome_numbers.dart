@@ -8,15 +8,16 @@ class Palindrome {
 
     boolean isPalindrome(int n) => n.toString() == reverse(n).toString();
 
-    boolean isSumPalindrome(int n) => isPalindrome(n + reverse(n));
+    boolean isSumPalindrome() => isPalindrome(number + reverse(number));
 
-    boolean sumIsPalindromeRecursively(int n) {
-        if (isSumPalindrome(n)) {
+    boolean sumIsPalindromeRecursively() {
+        int sum = number + reverse(number);
+        if (isPalindrome(sum)) {
             return true;
         }
 
-        int sum = n + reverse(n);
-        return sumIsPalindromeRecursively(sum);
+        number = sum;
+        return sumIsPalindromeRecursively();
     }
 
 }
