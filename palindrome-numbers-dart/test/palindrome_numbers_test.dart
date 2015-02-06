@@ -4,14 +4,6 @@ import '../bin/palindrome_numbers.dart';
 void main() {
     var palindrome = new Palindrome();
 
-    group('Hooks', () {
-
-        test('hooks up test', () {
-            expect(2, equals(3 - 1));
-        });
-
-    });
-
     group('Reverse', () {
 
         test('reverses digits', () {
